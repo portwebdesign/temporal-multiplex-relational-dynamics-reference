@@ -1,8 +1,8 @@
 """Run a declared illustrative scenario from the command line.
 
 Usage:
-    python3 simulation/run.py simulation/configs/illustrative_baseline.json \
-        --output simulation/results/illustrative_baseline.csv
+    python3 run.py configs/illustrative_baseline.json \
+        --output results/illustrative_baseline.csv
 """
 
 from __future__ import annotations

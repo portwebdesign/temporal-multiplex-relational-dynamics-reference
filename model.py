@@ -26,13 +26,13 @@ UNIT_INTERVAL_PARAMETERS = (
     "q_g",
     "q_h",
     "c_target",
+    "c_star",
 )
 
 # Every other named coefficient in the illustrative specification is
 # non-negative; they have no empirical interpretation in this repository.
 NONNEGATIVE_PARAMETERS = (
     "psi_max",
-    "c_star",
     "a1",
     "a2",
     "a3",

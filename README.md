@@ -14,9 +14,13 @@ sensitivity utility, and regression tests.
 
 ## What this repository does—and does not—provide
 
-The code implements the symbolic Appendix A mechanism, including the scalar
-pressure and exposure proxies and classical fourth-order Runge--Kutta (RK4)
-integration. Every numerical value is visible in the scenario JSON file.
+The code implements the declared Appendix A mechanism used by the baseline
+scenario, including the scalar pressure and exposure proxies and classical
+fourth-order Runge--Kutta (RK4) integration. Every numerical value is visible
+in the scenario JSON file. The baseline specializes the appendix's exogenous
+$c_{\mathrm{tar}}(t)$ target to a constant `c_target`; it does not implement a
+time-varying target-path interface, the main-text directional-conflict vectors,
+or the path statistic.
 
 It does **not** contain fitted parameters, human-subject data, clinical
 thresholds, a validated measurement instrument, person-level predictions, or
@@ -59,8 +63,9 @@ python3 -m unittest discover -s tests -v
 ```
 
 The regression suite checks the declared pressure bound, the baseline
-trajectory's normalized domain, configuration validation, and a documented
-structural invariant of this candidate mechanism.
+trajectory's normalized domain, Appendix A parameter-domain validation,
+configuration validation, and a documented structural invariant of this
+candidate mechanism.
 
 ## Repository layout
 
