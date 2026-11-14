@@ -1,0 +1,70 @@
+% Generated from the complete archived coefficient dictionaries.
+
+\begin{table}[H]\centering\footnotesize
+
+\begin{tabular}{@{}lrlrlr@{}}\toprule
+
+\multicolumn{6}{@{}l}{Common coefficients: constructed and saturation regimes}\\
+
+Coefficient & Value & Coefficient & Value & Coefficient & Value \\\midrule
+
+$b_2$ & 0.25 & $\nu_{s}$ & 0.16 & $a_{w1}$ & 0.12 \\
+
+$b_3$ & 0.25 & $\xi_{s}$ & 0.18 & $b_{w1}$ & 0.1 \\
+
+$q_1$ & 0.3 & $\mu_{e}$ & 0.16 & $\gamma_{12}$ & 0.14 \\
+
+$q_{s}$ & 0.25 & $\omega_{e}$ & 0.14 & $a_{w2}$ & 0.12 \\
+
+$q_{e}$ & 0.25 & $\kappa_{e}$ & 0.12 & $b_{w2}$ & 0.1 \\
+
+$q_{g}$ & 0.25 & $P_0$ & 0.08 & $d_{w2}$ & 0.12 \\
+
+$q_{h}$ & 0.25 & $\alpha_{r}$ & 0.12 & $a_{\mathrm{conflict}}$ & 0.3 \\
+
+$c_{\mathrm{tar}}$ & 0.45 & $a_{r}$ & 0.1 & $\lambda_{d}$ & 0.2 \\
+
+$c_{\mathrm{thr}}$ & 0.5 & $\gamma_{r}$ & 0.1 & $\lambda_{h}$ & 0.15 \\
+
+$\psi_{\mathrm{max}}$ & 1 & $\theta_{r}$ & 0.16 & $k_{\mathrm{visibility}}$ & 0 \\
+
+$a_1$ & 0.28 & $\tau_{c}$ & 0.2 & $k_{\mathrm{access}}$ & 0 \\
+
+$a_2$ & 0.2 & $a_{p}$ & 0.12 & $k_{\mathrm{input}}$ & 0 \\
+
+$a_3$ & 0.16 & $b_{p}$ & 0.1 & $k_{\mathrm{isolation}}$ & 0 \\
+
+$b_1$ & 0.3 & $\delta_{p}$ & 0.12 &  &  \\
+
+$\rho_{s}$ & 0.18 & $\zeta_{p}$ & 0.16 &  &  \\
+
+\midrule
+
+\multicolumn{6}{@{}l}{Regime-specific coefficients}\\
+
+\multicolumn{2}{@{}l}{Coefficient} & \multicolumn{2}{r}{Constructed upper/lower} & \multicolumn{2}{r@{}}{Saturation} \\\midrule
+
+\multicolumn{2}{@{}l}{$a_{s}$} & \multicolumn{2}{r}{0.139118585000} & \multicolumn{2}{r@{}}{0.12} \\
+
+\multicolumn{2}{@{}l}{$a_{e}$} & \multicolumn{2}{r}{0.187925112381} & \multicolumn{2}{r@{}}{0.1} \\
+
+\multicolumn{2}{@{}l}{$\eta_{r}$} & \multicolumn{2}{r}{0.322171097108} & \multicolumn{2}{r@{}}{0.14} \\
+
+\multicolumn{2}{@{}l}{$\rho_{p}$} & \multicolumn{2}{r}{0.590942028986} & \multicolumn{2}{r@{}}{0.16} \\
+
+\multicolumn{2}{@{}l}{$d_{w1}$} & \multicolumn{2}{r}{0.660385603571} & \multicolumn{2}{r@{}}{0.12} \\
+
+\multicolumn{2}{@{}l}{$h_{w2}$} & \multicolumn{2}{r}{1.198550210084} & \multicolumn{2}{r@{}}{0.1} \\
+
+\bottomrule\end{tabular}
+
+\caption{Complete nominal ODE coefficients: 43 common values and six constructed/saturation pairs. The upper and lower constructed branches use identical coefficients. Constructed values in the lower panel are rounded to twelve decimal places; integrations use the full-precision values in the accompanying scenarios. The four $k$ coefficients are zero here and take the stated overrides in the counter-mechanism.}\label{tab:model-parameters}\end{table}
+
+The network uses $\Gamma_{23}=\Gamma_{32}=0.2$ with all other entries zero, $K_\ell=1$ for all layers, $K_H=1$, and $\Psi_0=1$. Two unit-weight demand edges have marks $0.15$ before the pulse and $1$ during $5\leq t<10$; their one-dimensional directions are $[1,1]$ or $[1,-1]$. Unit support gives $H=1$ and $h_{\mathrm{net}}=0.5$. The filter comparison uses $\bm\sigma=[0.0,0.5,0.5]^{\top}$ during the pulse; the other comparisons use zero filtering.
+
+The baseline inputs are $\bm u_0=[0.20,0.35,0.30]^{\top}$; stronger inputs use $[0.60,0.70,0.60]^{\top}$ during the pulse.
+
+The counter-mechanism uses
+\[(k_{\mathrm{visibility}},k_{\mathrm{access}},k_{\mathrm{input}},k_{\mathrm{isolation}})=(0.10,0.08,0.20,0.20).\]
+
+Pathway-removal comparisons set the named $a_{\mathrm{conflict}}$, $\lambda_d$, or $\lambda_h$ to zero. The primary target remains $c_{\mathrm{tar}}=0.45$; the separate target comparison sets it to $0.35$ during the pulse and restores it afterwards.

@@ -758,26 +758,30 @@ def results_tex(report, path, scenarios):
               r"The primary direction, pathway-removal, and full--core comparisons keep $c_{\mathrm{tar}}=0.45$ and these inputs fixed. Permeability therefore remains at its stationary target. A separate intervention shifts the target to $0.35$ during the opposed pulse and then restores it. Its context control retains that target schedule while demand stays at baseline. The two-state core fixes all background coordinates at the same stationary state as its paired full model.",
               r"We report the resource response $\delta r(t)=r_{\mathrm{pulse}}(t)-r_{\mathrm{context}}(t)$ and the corresponding load response $\delta w_2(t)$. For the fixed-context comparisons, the context control is the stationary baseline. Each deviation index $V$ uses its own full-system reference and equal weights.",
               r"\begin{table}[H]\centering\footnotesize",
-              r"\begin{tabularx}{\textwidth}{@{}Yrrrrr@{}}\toprule",
-              r"Declared comparison & $r(10)$ & $r(20)$ & $\max_t|\delta r(t)|$ & $\max_t\delta w_2(t)$ & $10^3 V(10)$ \\\midrule"]
+              r"\begin{tabularx}{\textwidth}{@{}Yrrrrrr@{}}\toprule",
+              r"Declared comparison & $r^\star$ & $r(10)$ & $r(20)$ & $\max_t|\delta r(t)|$ & $\max_t\delta w_2(t)$ & $10^3 V(10)$ \\\midrule"]
     labels = {"aligned":"Aligned","opposed":"Opposed","opposed_no_conflict":"Conflict path off",
-              "opposed_no_external":"External path off","opposed_no_support":"Support path off",
+              "opposed_no_external":"Direct demand gain off","opposed_no_support":"Support gain off",
               "opposed_reduced":"Two-state core","opposed_filtered":"Upstream filtering",
               "opposed_tradeoffs":"Counter-mechanism","opposed_inputs":"Stronger inputs",
               "opposed_tradeoffs_inputs":"Counter, stronger inputs","opposed_target_shift":"Boundary target shift"}
     for name,label in labels.items():
         row = records[name]
-        values = [row["r_t10"],row["r_t20"],row["max_abs_r_contrast"],row["max_w2_contrast"],1000*row["V_t10"]]
+        values = [row["r_baseline"],row["r_t10"],row["r_t20"],row["max_abs_r_contrast"],row["max_w2_contrast"],1000*row["V_t10"]]
         lines.append(" & ".join([label]+[f"{value:.4f}" for value in values])+r" \\")
     lines += [r"\bottomrule\end{tabularx}",
-              r"\caption{Synthetic pulse responses. Maxima cover $0\leq t\leq20$; the resource column uses absolute response magnitude. Backgrounds are initialized separately for structural parameter changes. The target intervention is a separate comparison.}\label{tab:synthetic-results}\end{table}"]
+              r"\caption{Synthetic pulse responses. $r^\star$ is each condition's stationary pre-pulse reference; maxima cover $0\leq t\leq20$. The response $\delta r=r_{\mathrm{pulse}}-r_{\mathrm{context}}$ uses a stationary context in the fixed-context arms and a moving matched context when inputs, filtering, or the target are scheduled. Structural parameter changes have separately equilibrated backgrounds.}\label{tab:synthetic-results}\end{table}"]
+    direct_off,support_off = records["opposed_no_external"],records["opposed_no_support"]
+    input_row,input_context = records["opposed_inputs"],records["opposed_inputs_context_control"]
+    lines.append(rf"Removing the direct demand gain sets $\lambda_d=0$ while retaining the directional-conflict channel, and gives $r^\star={direct_off['r_baseline']:.4f}$; removing the support gain gives $r^\star={support_off['r_baseline']:.4f}$. At a matched state with unsaturated pressure, the conflict-slope difference contains $-\eta_r r a_{{\mathrm{{conflict}}}}\Delta\chi$ and therefore scales with the current resource level. Finite-window peaks additionally depend on the other reference coordinates and their subsequent evolution.")
+    lines.append(rf"The stronger-input comparison illustrates the moving context: it starts at $r^\star={input_row['r_baseline']:.4f}$ and reaches $r(10)={input_row['r_t10']:.4f}$, while its matched input-only context reaches $r_{{\mathrm{{context}}}}(10)={input_context['r_t10']:.4f}$. Their difference is $\delta r(10)={input_row['r_contrast_t10']:.4f}$.")
     aligned,opposed = records["aligned"],records["opposed"]
     full_core = report["core_full_demand_response"]["interior_upper_opposed"]
     lines.append(rf"In the upper-branch comparison, aligned demand produces a peak load response of ${aligned['max_w2_contrast']:.4f}$ and a maximum resource departure of ${aligned['max_abs_r_contrast']:.4f}$. Opposed demand produces a maximum resource departure of ${opposed['max_abs_r_contrast']:.4f}$. The opposed-minus-aligned resource contrast is ${direction['opposed_minus_aligned_t10']:.4f}$ at $t=10$ and ${direction['opposed_minus_aligned_t20']:.4f}$ at $t=20$. Its largest magnitude is ${direction['max_absolute']:.4f}$ at $t={direction['time_of_maximum']:.2f}$. Removing the conflict pathway makes the matched directional trajectories coincide.")
     lines.append(rf"The full-minus-core difference in opposed demand responses is ${full_core['t10']:.4f}$ at $t=10$ and ${full_core['t20']:.4f}$ at $t=20$. The comparison permits several coordinates to evolve together; it measures their combined consequence. For the main opposed pulse, $V(10)={opposed['V_t10']:.4f}$ and $V(20)={opposed['V_t20']:.4f}$. Complete coordinate spans, response timing, integrals, and one-unit changes in $V$ are supplied with the experiment.")
     lines += [r"\begin{table}[H]\centering\footnotesize",
               r"\begin{tabularx}{\textwidth}{@{}Yrrrrr@{}}\toprule",
-              r"Stationary regime & $1-w_2^\star$ & $\lambda_d(1-w_2^\star)$ & Aligned $\max|\delta r|$ & Opposed $\max|\delta r|$ & Full--core $\Delta_{10}$ \\\midrule"]
+              r"Stationary regime & $1-w_2^\star$ & $\lambda_d(1-w_2^\star)$ & \shortstack{Aligned\\$\max_t|\delta r(t)|$} & \shortstack{Opposed\\$\max_t|\delta r(t)|$} & Full--core $\Delta_{10}$ \\\midrule"]
     for regime,row in report["regime_comparisons"].items():
         values = [row["load_headroom"],row["local_load_demand_derivative"],row["aligned"]["max_abs_r_contrast"],row["opposed"]["max_abs_r_contrast"],row["opposed_full_minus_core"]["t10"]]
         lines.append(" & ".join([regime_labels[regime]]+[f"{value:.4f}" for value in values])+r" \\")
@@ -811,8 +815,7 @@ def results_tex(report, path, scenarios):
     for row in report["cycles"].values():
         cycle_initial.setdefault(row["direction"],row)
     ca,co = cycle_initial["aligned"],cycle_initial["opposed"]
-    lines.append(rf"Continuous triangular demand marks supply matched rising and falling pressure branches. For each fixed direction, marks rise from $0.15$ to $1$ and return over half-cycle durations of $5$, $10$, or $20$. Direction is present before the cycle: aligned cycles start at $r^\star={ca['baseline_r']:.4f}$ with $\chi^\star={ca['baseline_conflict']:.4f}$, whereas opposed cycles start at $r^\star={co['baseline_r']:.4f}$ with $\chi^\star={co['baseline_conflict']:.4f}$. Each cycle therefore uses its own stationary baseline. Signed and absolute branch areas are evaluated over the same external-demand range; endpoint gaps record incomplete return of the output.")
-    lines.append("Each cycle family is interpreted relative to its own direction-specific reference; the common-start pulse experiment supplies the matched direction contrast.")
+    lines.append(rf"Continuous triangular demand marks supply matched rising and falling demand branches. For each fixed direction, marks rise from $0.15$ to $1$ and return over half-cycle durations of $5$, $10$, or $20$. Aligned cycles start at $r^\star={ca['baseline_r']:.4f}$ with $\chi^\star={ca['baseline_conflict']:.4f}$; opposed cycles start at their own stationary state, $r^\star={co['baseline_r']:.4f}$ with $\chi^\star={co['baseline_conflict']:.4f}$, under opposition already present in the basal forcing. Signed and absolute areas summarize the complete rising and falling paths over the common external-demand range, with output endpoint gaps retained separately.")
     lines += [r"\begin{table}[H]\centering\small",r"\begin{tabular}{@{}lrrrr@{}}\toprule",
               r"Direction & Half-cycle duration & $\mathcal H_{r,d_{\mathrm{ext}}}$ & $\mathcal H_{\mathrm{abs}}$ & Endpoint $\Delta r$ \\\midrule"]
     for row in report["cycles"].values():
@@ -823,29 +826,110 @@ def results_tex(report, path, scenarios):
         lines.append(r"The interpolated branch difference has one orientation in these cycles, so absolute area equals the magnitude of signed area. Figure~\ref{fig:cycles} shows one absolute-area curve for each direction condition. The duration dependence describes the response at the specified rates.")
     else:
         lines.append(r"The signed and absolute areas in Table~\ref{tab:cycle-statistics} distinguish net orientation from total branch separation. Figure~\ref{fig:cycles} compares absolute areas across direction conditions and cycle durations.")
-    aligned_groups = {}
-    opposed_outcomes = []
-    for name,row in report["post_cycle_relaxation"].items():
-        duration = report["cycles"][name]["phase_duration"]
-        if report["cycles"][name]["direction"]=="aligned":
-            aligned_groups.setdefault(row["classified_branch"],[]).append(duration)
-        else:
-            opposed_outcomes.append(row)
-    labels = {"upper":"the upper stationary branch","lower":"the lower stationary branch",
-              "other_stationary_state":"a different stationary state"}
-    return_paragraph = []
-    for branch,durations in aligned_groups.items():
-        values = [f"${duration:g}$" for duration in sorted(durations)]
-        joined = values[0] if len(values)==1 else ", ".join(values[:-1])+" and "+values[-1]
-        subject = ("The aligned cycle with half-cycle duration " if len(values)==1 else "Aligned cycles with half-cycle durations ")+joined
-        return_paragraph.append(subject+(" remains numerically unresolved." if branch=="unresolved" else " relax"+("es" if len(values)==1 else "")+" to "+labels.get(branch,branch.replace("_"," "))+" under basal forcing."))
-    if all(row["status"]=="completed" and row["classified_branch"]=="cycle_reference" for row in opposed_outcomes):
-        return_paragraph.append("The opposed cycles return to their direction-specific stationary reference.")
-    else:
-        return_paragraph.append("The supplied post-cycle records identify every opposed-cycle terminal state and unresolved return condition.")
-    return_paragraph.append("These return checks assess the full terminal state separately from the scalar branch-area summary.")
-    lines.append(" ".join(return_paragraph))
+    long_aligned = report["cycles"]["cycle_aligned_20"]
+    long_opposed = report["cycles"]["cycle_opposed_20"]
+    aligned_terminal = report["post_cycle_relaxation"]["cycle_aligned_20"]
+    opposed_terminal = report["post_cycle_relaxation"]["cycle_opposed_20"]
+    aligned_end = long_aligned["baseline_r"]+long_aligned["output_gap"]
+    aligned_stationary_gap = aligned_terminal["state"][2]-long_aligned["baseline_r"]
+    lines.append(rf"At half-cycle duration $20$, the aligned absolute area, ${long_aligned['absolute']:.5f}$, exceeds the opposed area, ${long_opposed['absolute']:.5f}$. The larger aligned area accompanies a change of terminal stationary reference: this path starts at $r^\star={long_aligned['baseline_r']:.4f}$, ends the forced cycle at $r(45)={aligned_end:.4f}$, and under continued basal forcing relaxes to the lower aligned-forcing reference, $r^\star={aligned_terminal['state'][2]:.4f}$. Its cycle-end gap is ${long_aligned['output_gap']:.5f}$, while the eventual stationary-reference difference is ${aligned_stationary_gap:.5f}$. The opposed cycle begins at its different opposed-forcing reference, $r^\star={long_opposed['baseline_r']:.4f}$ with $\chi^\star={long_opposed['baseline_conflict']:.4f}$, and its continuation returns to that reference. These areas compare whole paths with different starting states and basal forcing; the common-start pulse experiment supplies the matched direction contrast.")
+    lines.append("The shorter aligned cycles return to the upper stationary reference. Full-state return checks and endpoint gaps are recorded separately from the branch-area integral.")
     path.write_text("\n\n".join(lines)+"\n")
+
+
+def parameter_tex(name):
+    """Render code coefficient names using the manuscript's mathematical notation."""
+    special = {"P0":r"P_0","c_target":r"c_{\mathrm{tar}}","c_star":r"c_{\mathrm{thr}}",
+               "psi_max":r"\psi_{\mathrm{max}}"}
+    if name in special:
+        return special[name]
+    if name in {"a1","a2","a3","b1","b2","b3","q1"}:
+        return name[0]+"_"+name[1:]
+    prefix,suffix = name.split("_",1)
+    greek = {"rho","nu","xi","mu","omega","kappa","alpha","gamma","theta","eta","tau","delta","zeta","lambda"}
+    base = "\\"+prefix if prefix in greek else prefix
+    index = r"\mathrm{"+suffix+"}" if suffix in {"conflict","visibility","access","input","isolation"} else suffix
+    return base+"_{"+index+"}"
+
+
+def parameters_tex(report, path, scenarios):
+    """Generate the complete nominal coefficient table and scenario constants."""
+    constructed = scenarios["opposed"]["parameters"]
+    lower = scenarios["lower_opposed"]["parameters"]
+    saturation = scenarios["saturated_opposed"]["parameters"]
+    solved = list(report["construction"]["solved_coefficients"])
+    if constructed != lower or set(constructed)!=set(saturation) or len(constructed)!=49:
+        raise ValueError("parameter table requires 49 coefficients and identical constructed-branch coefficients")
+    differences = [key for key in constructed if constructed[key]!=saturation[key]]
+    if set(differences)!=set(solved) or len(solved)!=6:
+        raise ValueError("parameter table differences do not match the six solved balances")
+    common = [key for key in constructed if key not in solved]
+    if len(common)!=43 or len(set(parameter_tex(key) for key in constructed))!=49:
+        raise ValueError("parameter table coverage or symbol uniqueness failed")
+    compact = lambda value:format(float(value),".12g")
+    lines = [r"% Generated from the complete archived coefficient dictionaries.",
+             r"\begin{table}[H]\centering\footnotesize",
+             r"\begin{tabular}{@{}lrlrlr@{}}\toprule",
+             r"\multicolumn{6}{@{}l}{Common coefficients: constructed and saturation regimes}\\",
+             r"Coefficient & Value & Coefficient & Value & Coefficient & Value \\\midrule"]
+    height = ceil(len(common)/3)
+    for row in range(height):
+        cells = []
+        for column in range(3):
+            index = column*height+row
+            if index<len(common):
+                key = common[index]
+                cells += ["$"+parameter_tex(key)+"$",compact(constructed[key])]
+            else:
+                cells += ["",""]
+        lines.append(" & ".join(cells)+r" \\")
+    lines += [r"\midrule",
+              r"\multicolumn{6}{@{}l}{Regime-specific coefficients}\\",
+              r"\multicolumn{2}{@{}l}{Coefficient} & \multicolumn{2}{r}{Constructed upper/lower} & \multicolumn{2}{r@{}}{Saturation} \\\midrule"]
+    for key in solved:
+        lines.append(r"\multicolumn{2}{@{}l}{$"+parameter_tex(key)+r"$} & \multicolumn{2}{r}{"+f"{constructed[key]:.12f}"+r"} & \multicolumn{2}{r@{}}{"+compact(saturation[key])+r"} \\")
+    lines += [r"\bottomrule\end{tabular}",
+              r"\caption{Complete nominal ODE coefficients: 43 common values and six constructed/saturation pairs. The upper and lower constructed branches use identical coefficients. Constructed values in the lower panel are rounded to twelve decimal places; integrations use the full-precision values in the accompanying scenarios. The four $k$ coefficients are zero here and take the stated overrides in the counter-mechanism.}\label{tab:model-parameters}\end{table}"]
+    nominal = scenarios["opposed"]
+    network = nominal["network"]["baseline"]
+    pulse = nominal["network"]["schedule"][0]
+    high = pulse["network"]
+    support = sum(float(edge["weight"])*float(edge["support"]) for edge in network["support_edges"])/float(network["support_scale"])
+    counter = scenarios["opposed_tradeoffs"]["parameters"]
+    cost_keys = ("k_visibility","k_access","k_input","k_isolation")
+    baseline_inputs = [nominal["inputs"]["baseline"][key] for key in ("delay","boundary","review")]
+    stronger = [scenarios["opposed_inputs"]["inputs"]["schedule"][0]["values"][key] for key in ("delay","boundary","review")]
+    moderation = scenarios["opposed_filtered"]["network"]["schedule"][0]["network"]["moderation"]
+    target = scenarios["opposed_target_shift"]["permeability_target"]["schedule"][0]
+    if any(float(network["coupling"][i][j])!=0 for i in range(3) for j in range(3) if (i,j) not in {(1,2),(2,1)}):
+        raise ValueError("the declared network note requires only the two displayed nonzero couplings")
+    lines.append(rf"The network uses $\Gamma_{{23}}=\Gamma_{{32}}={network['coupling'][1][2]:g}$ with all other entries zero, $K_\ell={network['layer_scales'][0]:g}$ for all layers, $K_H={network['support_scale']:g}$, and $\Psi_0={network['psi_scale']:g}$. Two unit-weight demand edges have marks ${network['demand_edges'][0]['magnitude']:g}$ before the pulse and ${high['demand_edges'][0]['magnitude']:g}$ during ${pulse['start']:g}\leq t<{pulse['end']:g}$; their one-dimensional directions are $[1,1]$ or $[1,-1]$. Unit support gives $H={support:g}$ and $h_{{\mathrm{{net}}}}={support/(1+support):g}$. The filter comparison uses $\bm\sigma={vector_tex(moderation,1)}$ during the pulse; the other comparisons use zero filtering.")
+    lines.append(rf"The baseline inputs are $\bm u_0={vector_tex(baseline_inputs,2)}$; stronger inputs use ${vector_tex(stronger,2)}$ during the pulse.")
+    cost_values = ",".join(f"{counter[key]:.2f}" for key in cost_keys)
+    lines.append(r"The counter-mechanism uses"+"\n"+rf"\[(k_{{\mathrm{{visibility}}}},k_{{\mathrm{{access}}}},k_{{\mathrm{{input}}}},k_{{\mathrm{{isolation}}}})=({cost_values}).\]")
+    lines.append(rf"Pathway-removal comparisons set the named $a_{{\mathrm{{conflict}}}}$, $\lambda_d$, or $\lambda_h$ to zero. The primary target remains $c_{{\mathrm{{tar}}}}={nominal['permeability_target']['baseline']:g}$; the separate target comparison sets it to ${target['value']:g}$ during the pulse and restores it afterwards.")
+    path.write_text("\n\n".join(lines)+"\n")
+    return {"all_parameter_keys":list(constructed),"common_keys":common,"solved_keys":solved,
+            "parameter_count":len(constructed),"common_count":len(common),"solved_count":len(solved),
+            "constructed_branch_parameters_equal":constructed==lower,
+            "constructed_parameters":constructed,"saturation_parameters":saturation,
+            "constructed_display_decimal_places":12}
+
+
+def presentation_manifest(report, parameter_coverage, out, rendered):
+    """Record deterministic identities for the unchanged data and new presentation."""
+    numerical = {name:hashlib.sha256((out/name).read_bytes()).hexdigest() for name in report["numerical_files"]}
+    assets = ["revision-results.tex","revision-numerics.tex","revision-parameters.tex",
+              "mechanism_figure.tex","cycle_statistics.tex"]
+    if rendered:
+        assets += ["mechanism_figure.pdf","mechanism_figure.png","cycle_statistics.pdf","cycle_statistics.png"]
+    record = {"presentation_revision":1,"presentation_label":"self-contained-presentation", "scientific_version":report["version"],
+              "protocol_sha256":report["protocol_sha256"],"implementation_sha256":report["implementation_sha256"],
+              "numerical_file_count":len(numerical),"numerical_files_sha256":numerical,
+              "parameter_table":parameter_coverage,
+              "presentation_assets_sha256":{name:hashlib.sha256((out/name).read_bytes()).hexdigest() for name in assets},
+              "rendered":bool(rendered)}
+    write_json(out/"presentation-manifest.json",record)
 
 
 def scientific_number(value):
@@ -985,7 +1069,8 @@ def sync_manuscript(out,manuscript):
     (manuscript/"figures").mkdir(parents=True,exist_ok=True)
     for source_name,target_name in (("mechanism_figure.pdf","figures/revision-mechanism.pdf"),
                                     ("cycle_statistics.pdf","figures/cycle-statistics.pdf"),
-                                    ("revision-results.tex","revision-results.tex"),("revision-numerics.tex","revision-numerics.tex")):
+                                    ("revision-results.tex","revision-results.tex"),("revision-numerics.tex","revision-numerics.tex"),
+                                    ("revision-parameters.tex","revision-parameters.tex")):
         source,target=out/source_name,manuscript/target_name
         if target.exists() and source.read_bytes()==target.read_bytes():
             continue
@@ -997,14 +1082,18 @@ def sync_manuscript(out,manuscript):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--protocol",type=Path,default=ROOT/"configs/referee_protocol.json")
-    parser.add_argument("--output",type=Path,default=ROOT/"referee-results")
+    parser.add_argument("--output",type=Path,default=ROOT/"presentation-results")
     parser.add_argument("--render",action="store_true")
     parser.add_argument("--from-results",type=Path,help="regenerate presentation from matching verified numerical files")
     parser.add_argument("--manuscript-dir",type=Path,help="explicit manuscript-asset destination; requires --render")
     args=parser.parse_args()
     if args.manuscript_dir and not args.render:
         parser.error("--manuscript-dir requires --render")
-    out=args.output.resolve();out.mkdir(parents=True,exist_ok=True)
+    out=args.output.resolve()
+    protected=(ROOT/"referee-results").resolve()
+    if out==protected or protected in out.parents:
+        parser.error("referee-results is a preserved numerical snapshot; select another output directory")
+    out.mkdir(parents=True,exist_ok=True)
     protocol_path=args.protocol.resolve()
     protocol=json.loads(protocol_path.read_text())
     if protocol["version"]!=VERSION or protocol["solver"]!={"method":"classical_runge_kutta_4","dt":.02,"time_horizon":20}:
@@ -1017,9 +1106,11 @@ def main():
     cycle_figure_tex(cycles,traces,report,out/"cycle_statistics.tex")
     results_tex(report,out/"revision-results.tex",scenarios)
     numerics_tex(report,out/"revision-numerics.tex",protocol)
+    parameter_coverage=parameters_tex(report,out/"revision-parameters.tex",scenarios)
     if args.render:
         for stem in ("mechanism_figure","cycle_statistics"):
             render_figure(out,stem)
+    presentation_manifest(report,parameter_coverage,out,args.render)
     if args.manuscript_dir:
         sync_manuscript(out,args.manuscript_dir.resolve())
     print(json.dumps({"output":str(out),"version":VERSION,"reused_results":bool(args.from_results),

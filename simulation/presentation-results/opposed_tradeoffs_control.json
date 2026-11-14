@@ -1,0 +1,150 @@
+{
+  "metadata": {
+    "name": "opposed_tradeoffs_control",
+    "version": "0.4.0",
+    "regime": "interior_upper",
+    "baseline_seed": [
+      0.6,
+      0.35,
+      0.6,
+      0.45,
+      0.6,
+      0.6,
+      0.35
+    ],
+    "status": "Synthetic branch-aware mechanism comparison.",
+    "baseline_id": "b2ef5b3abc7aa320e47be03778b12131daa64dd35791b76e7efc13deb88138b4",
+    "control": "All pulse schedules disabled at the same stationary initial state."
+  },
+  "solver": {
+    "method": "classical_runge_kutta_4",
+    "dt": 0.02,
+    "time_horizon": 20
+  },
+  "initial_state": [
+    0.4318260051803574,
+    0.47973016765430615,
+    0.48689506991477827,
+    0.45,
+    0.37496295672784247,
+    0.32175180341109,
+    0.37859657234527655
+  ],
+  "inputs": {
+    "baseline": {
+      "delay": 0.2,
+      "boundary": 0.35,
+      "review": 0.3
+    },
+    "schedule": []
+  },
+  "parameters": {
+    "b2": 0.25,
+    "b3": 0.25,
+    "q1": 0.3,
+    "q_s": 0.25,
+    "q_e": 0.25,
+    "q_g": 0.25,
+    "q_h": 0.25,
+    "c_target": 0.45,
+    "c_star": 0.5,
+    "psi_max": 1.0,
+    "a1": 0.28,
+    "a2": 0.2,
+    "a3": 0.16,
+    "b1": 0.3,
+    "rho_s": 0.18,
+    "a_s": 0.13911858499999996,
+    "nu_s": 0.16,
+    "xi_s": 0.18,
+    "mu_e": 0.16,
+    "omega_e": 0.14,
+    "kappa_e": 0.12,
+    "a_e": 0.18792511238095244,
+    "P0": 0.08,
+    "alpha_r": 0.12,
+    "a_r": 0.1,
+    "gamma_r": 0.1,
+    "theta_r": 0.16,
+    "eta_r": 0.3221710971075378,
+    "tau_c": 0.2,
+    "rho_p": 0.5909420289855072,
+    "a_p": 0.12,
+    "b_p": 0.1,
+    "delta_p": 0.12,
+    "zeta_p": 0.16,
+    "a_w1": 0.12,
+    "b_w1": 0.1,
+    "gamma_12": 0.14,
+    "d_w1": 0.6603856035714287,
+    "a_w2": 0.12,
+    "b_w2": 0.1,
+    "d_w2": 0.12,
+    "h_w2": 1.1985502100840337,
+    "a_conflict": 0.3,
+    "lambda_d": 0.2,
+    "lambda_h": 0.15,
+    "k_visibility": 0.1,
+    "k_access": 0.08,
+    "k_input": 0.2,
+    "k_isolation": 0.2
+  },
+  "network": {
+    "baseline": {
+      "dimension": 1,
+      "layer_scales": [
+        1,
+        1,
+        1
+      ],
+      "support_scale": 1,
+      "psi_scale": 1,
+      "coupling": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0.2
+        ],
+        [
+          0,
+          0.2,
+          0
+        ]
+      ],
+      "demand_edges": [
+        {
+          "layer": 1,
+          "weight": 1,
+          "magnitude": 0.15,
+          "direction": [
+            1
+          ]
+        },
+        {
+          "layer": 2,
+          "weight": 1,
+          "magnitude": 0.15,
+          "direction": [
+            1
+          ]
+        }
+      ],
+      "support_edges": [
+        {
+          "weight": 1,
+          "support": 1
+        }
+      ]
+    },
+    "schedule": []
+  },
+  "permeability_target": {
+    "baseline": 0.45,
+    "schedule": []
+  }
+}
