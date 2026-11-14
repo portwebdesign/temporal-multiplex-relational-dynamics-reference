@@ -1,82 +1,87 @@
-# Temporal--Multiplex Relational Dynamics: Reference Implementation
+# Directional Demand and Resource Dynamics: Reference Implementation
 
-This repository is the MIT-licensed reference implementation for the
-synthetic, source-preserving mechanism reported in:
+This MIT-licensed repository is the executable reference implementation for:
 
-> Yalçın, M., & Karslı, O. (2026). *A Transparent Temporal--Multiplex
-> Framework for Relational Dynamics, Cross-Domain Spillover, and
-> Self-Regulation*.
+> Yalçın, M., & Karslı, O. (2026). *Directional Demand and Resource
+> Dynamics: A Source-Preserving Model*.
 
-Release **v0.3.0** implements the stationary-baseline dynamics used by the
-current article. It supersedes the historical v0.1.1 implementation, which
-remains available through its Git tag but does not reproduce this model.
+Release **v0.4.0** implements the source-preserving, branch-aware
+resource--load experiment used by the current article. It supersedes the
+historical v0.3.0 implementation for reproducing the current article; earlier
+tags remain available as preserved historical records.
 
 ## Scope
 
-The model keeps each source demand's action direction while direct and
-cross-layer transmission scale its magnitude. It computes external demand,
-source-preserving directional conflict, support, and a bounded seven-coordinate
-ODE. The included experiment uses declared, synthetic and uncalibrated
-scenarios; it is not fitted to human data and does not supply clinical,
-diagnostic, employment, insurance, legal, or person-level predictions.
+The model keeps each declared source demand separate until its directional
+disagreement is computed. It then maps external demand, support, and conflict
+signals into a bounded seven-coordinate gain--loss system. The protocol
+constructs a specified interior stationary reference, retains a second branch
+under the same coefficients, compares demand pulses at a constant permeability
+target, and treats a target shift as a separate intervention.
 
-The repository contains only the implementation, configurations, tests, and
-recorded synthetic outputs needed to reproduce the v0.3.0 article results. It
-does not include the authors' private notes, reviewer material, or manuscripts.
+All coefficients, states, time units, scenarios, and outputs are synthetic and
+uncalibrated. This software is not a clinical, diagnostic, employment,
+insurance, legal, or person-level forecasting tool. Its tests verify the
+declared mathematics and implementation; they do not validate the proposed
+psychological constructs in human observations.
+
+The repository contains only reusable software, configurations, tests, and
+recorded synthetic outputs. It deliberately excludes manuscripts, private
+working notes, reviewer material, and personal data.
 
 ## Requirements
 
 Python 3.9 or later is required. The numerical model uses only the Python
-standard library. Rebuilding the two vector figures also requires Tectonic and
-Poppler (`pdftoppm`).
+standard library. Rebuilding vector figures requires Tectonic and Poppler
+(`pdftoppm`).
 
-## Reproduce the declared experiment
+## Reproduce v0.4.0
 
 From the repository root:
 
 ```sh
 python3 -m unittest discover -s simulation/tests -v
-python3 simulation/revision_experiments.py \
-  --protocol simulation/configs/dynamics_protocol.json \
-  --output /tmp/temporal-multiplex-results --render
+python3 simulation/referee_experiments.py \
+  --protocol simulation/configs/referee_protocol.json \
+  --output /tmp/directional-demand-results --render
 ```
 
-The full run evaluates stationary baselines, pulse/control comparisons,
-sensitivity conditions, continuous cycles, and numerical step refinements. It
-writes a self-contained result directory under the path passed to `--output`.
-The committed `simulation/dynamics-results/` directory is the v0.3.0 result
-snapshot used for the release.
+The complete run performs branch-aware stationary preparation, pulse and
+matched-control comparisons, parameter checks, continuous cycles, local return
+probes, long-run terminal-state checks, and numerical refinements. It takes
+several minutes. The committed `simulation/referee-results/` directory is the
+v0.4.0 result snapshot.
 
-For a single declared scenario or a simple one-factor sweep:
+To regenerate only presentation assets from an already verified result set:
 
 ```sh
-python3 simulation/run.py simulation/configs/illustrative_baseline.json \
-  --output /tmp/illustrative_baseline.csv
-python3 simulation/sensitivity.py simulation/configs/illustrative_baseline.json \
-  --parameter a1 --values 0.10,0.20,0.30,0.40 \
-  --output /tmp/a1_terminal_sensitivity.csv
+python3 simulation/referee_experiments.py \
+  --protocol simulation/configs/referee_protocol.json \
+  --from-results simulation/referee-results \
+  --output /tmp/directional-demand-presentation --render
 ```
 
-## Repository layout
+## Contents
 
 ```text
 simulation/
-  analysis.py                    # Stationary states, deviations, and cycle statistics
-  model.py                       # Bounded gain--loss ODE and RK4 solver
-  network.py                     # Source-preserving temporal-multiplex aggregation
-  revision_experiments.py        # Full v0.3.0 experiment and figure generator
-  configs/dynamics_protocol.json # Declared protocol
-  tests/                         # 53 regression and mathematical checks
-  dynamics-results/              # Recorded v0.3.0 synthetic results and figures
+  analysis.py                    # equilibrium, deviation, and cycle summaries
+  model.py                       # bounded gain--loss ODE and RK4 solver
+  network.py                     # source-preserving temporal aggregation
+  regimes.py                     # stationary construction and local diagnostics
+  referee_experiments.py         # complete v0.4.0 runner and figures
+  configs/referee_protocol.json  # declared current protocol
+  tests/                         # 74 regression and mathematical checks
+  referee-results/               # 158 recorded v0.4.0 outputs and figures
 ```
+
+The protocol keeps the historical source files required by the test suite, but
+the current executable entry point, configuration, and results are the
+`referee_*` files above.
 
 ## Licence and citation
 
 All code, configurations, tests, and committed synthetic outputs in this
 repository are released under the [MIT License](LICENSE). Please cite release
-v0.3.0 and the accompanying article; machine-readable metadata are in
+v0.4.0 and the accompanying article; machine-readable metadata are in
 [`CITATION.cff`](CITATION.cff).
-
-The mathematical and numerical checks establish consistency of the declared
-mechanism. They do not validate the proposed psychological constructs or prove
-that the synthetic effect sizes occur in human observations.

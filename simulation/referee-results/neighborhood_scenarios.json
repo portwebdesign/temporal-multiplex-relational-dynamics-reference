@@ -1,0 +1,2462 @@
+{
+  "neighborhood_a_s_0": {
+    "metadata": {
+      "name": "neighborhood_a_s_0",
+      "version": "0.4.0",
+      "regime": "interior_upper",
+      "baseline_seed": [
+        0.6,
+        0.35,
+        0.6,
+        0.45,
+        0.6,
+        0.6,
+        0.35
+      ],
+      "status": "Synthetic branch-aware mechanism comparison.",
+      "baseline_id": "afbd058214630a8651e4dbeb22f5ddce4d2dcd8f12ea8e81e85373f4ce239776"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.30606187064176543,
+      0.5649375675534556,
+      0.39048471588828404,
+      0.45,
+      0.23962231165508274,
+      0.26361312036795737,
+      0.3952922658330619
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.13216265574999997,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.18792511238095244,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.3221710971075378,
+      "tau_c": 0.2,
+      "rho_p": 0.5909420289855072,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6603856035714287,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.1985502100840337,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  },
+  "neighborhood_a_s_1": {
+    "metadata": {
+      "name": "neighborhood_a_s_1",
+      "version": "0.4.0",
+      "regime": "interior_upper",
+      "baseline_seed": [
+        0.6,
+        0.35,
+        0.6,
+        0.45,
+        0.6,
+        0.6,
+        0.35
+      ],
+      "status": "Synthetic branch-aware mechanism comparison.",
+      "baseline_id": "bcfb4cc930f4a1cc69d79fc0c153a905c3e26e6d88289a3243010770f3b7ace0"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.6534001342601079,
+      0.3156669887342118,
+      0.6413219823016926,
+      0.45,
+      0.6662957433371474,
+      0.6724146504207125,
+      0.3414762829210494
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.14607451424999995,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.18792511238095244,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.3221710971075378,
+      "tau_c": 0.2,
+      "rho_p": 0.5909420289855072,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6603856035714287,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.1985502100840337,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  },
+  "neighborhood_a_e_0": {
+    "metadata": {
+      "name": "neighborhood_a_e_0",
+      "version": "0.4.0",
+      "regime": "interior_upper",
+      "baseline_seed": [
+        0.6,
+        0.35,
+        0.6,
+        0.45,
+        0.6,
+        0.6,
+        0.35
+      ],
+      "status": "Synthetic branch-aware mechanism comparison.",
+      "baseline_id": "c0e153a62954073c76ff34805b0d2ae5589b85f4c4a7bd630eec6f8104d37a35"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.29660859777519766,
+      0.5843179225376308,
+      0.38086689863427403,
+      0.45,
+      0.22534321293630474,
+      0.25120057962739906,
+      0.39846681644723064
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.13911858499999996,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1785288567619048,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.3221710971075378,
+      "tau_c": 0.2,
+      "rho_p": 0.5909420289855072,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6603856035714287,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.1985502100840337,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  },
+  "neighborhood_a_e_1": {
+    "metadata": {
+      "name": "neighborhood_a_e_1",
+      "version": "0.4.0",
+      "regime": "interior_upper",
+      "baseline_seed": [
+        0.6,
+        0.35,
+        0.6,
+        0.45,
+        0.6,
+        0.6,
+        0.35
+      ],
+      "status": "Synthetic branch-aware mechanism comparison.",
+      "baseline_id": "7409656b3cce5682eff00f515465a79d922f89547e9209f33e1e63410d02ba19"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.6457156697540989,
+      0.31243156147652934,
+      0.6397119818164991,
+      0.45,
+      0.6628516257616286,
+      0.66919007596813,
+      0.34120085577506604
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.13911858499999996,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.19732136800000008,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.3221710971075378,
+      "tau_c": 0.2,
+      "rho_p": 0.5909420289855072,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6603856035714287,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.1985502100840337,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  },
+  "neighborhood_eta_r_0": {
+    "metadata": {
+      "name": "neighborhood_eta_r_0",
+      "version": "0.4.0",
+      "regime": "interior_upper",
+      "baseline_seed": [
+        0.6,
+        0.35,
+        0.6,
+        0.45,
+        0.6,
+        0.6,
+        0.35
+      ],
+      "status": "Synthetic branch-aware mechanism comparison.",
+      "baseline_id": "ba24ce76ce2c5dc6a79580c9434dfeff79f9bc75eff5bf0fb21979eacbbbba1b"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.6096490974887616,
+      0.3434132914753515,
+      0.6166402573296899,
+      0.45,
+      0.6124402639791984,
+      0.6144087582965958,
+      0.34840609776952636
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.13911858499999996,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.18792511238095244,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.3060625422521609,
+      "tau_c": 0.2,
+      "rho_p": 0.5909420289855072,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6603856035714287,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.1985502100840337,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  },
+  "neighborhood_eta_r_1": {
+    "metadata": {
+      "name": "neighborhood_eta_r_1",
+      "version": "0.4.0",
+      "regime": "interior_upper",
+      "baseline_seed": [
+        0.6,
+        0.35,
+        0.6,
+        0.45,
+        0.6,
+        0.6,
+        0.35
+      ],
+      "status": "Synthetic branch-aware mechanism comparison.",
+      "baseline_id": "706b1e1a6df88a51aabe39bdb069950a18f24a2bb130c99fbb408674ef41ce4c"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.5868561121989233,
+      0.35920741208111,
+      0.580596915291403,
+      0.45,
+      0.5828436316308006,
+      0.580584099875108,
+      0.35219884468789375
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.13911858499999996,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.18792511238095244,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.33827965196291465,
+      "tau_c": 0.2,
+      "rho_p": 0.5909420289855072,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6603856035714287,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.1985502100840337,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  },
+  "neighborhood_rho_p_0": {
+    "metadata": {
+      "name": "neighborhood_rho_p_0",
+      "version": "0.4.0",
+      "regime": "interior_upper",
+      "baseline_seed": [
+        0.6,
+        0.35,
+        0.6,
+        0.45,
+        0.6,
+        0.6,
+        0.35
+      ],
+      "status": "Synthetic branch-aware mechanism comparison.",
+      "baseline_id": "6d63fc6c7e91331167177711c99610fea8fb4afb5af3ff81c63204ce2c6dd473"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.30142407542725025,
+      0.5709410439795594,
+      0.3858905323402375,
+      0.45,
+      0.22474565054177278,
+      0.25805298337355553,
+      0.39642680680557113
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.13911858499999996,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.18792511238095244,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.3221710971075378,
+      "tau_c": 0.2,
+      "rho_p": 0.5613949275362318,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6603856035714287,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.1985502100840337,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  },
+  "neighborhood_rho_p_1": {
+    "metadata": {
+      "name": "neighborhood_rho_p_1",
+      "version": "0.4.0",
+      "regime": "interior_upper",
+      "baseline_seed": [
+        0.6,
+        0.35,
+        0.6,
+        0.45,
+        0.6,
+        0.6,
+        0.35
+      ],
+      "status": "Synthetic branch-aware mechanism comparison.",
+      "baseline_id": "9cde64b1d44a81eb1463aecb7c4098b36dae851fbf3bfd02808c2c3cd843c0c4"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.64547699262383,
+      0.3166617426632707,
+      0.6396611022633609,
+      0.45,
+      0.6706237522703352,
+      0.6668347202716082,
+      0.3417344791552603
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.13911858499999996,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.18792511238095244,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.3221710971075378,
+      "tau_c": 0.2,
+      "rho_p": 0.6204891304347826,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6603856035714287,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.1985502100840337,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  },
+  "neighborhood_d_w1_0": {
+    "metadata": {
+      "name": "neighborhood_d_w1_0",
+      "version": "0.4.0",
+      "regime": "interior_upper",
+      "baseline_seed": [
+        0.6,
+        0.35,
+        0.6,
+        0.45,
+        0.6,
+        0.6,
+        0.35
+      ],
+      "status": "Synthetic branch-aware mechanism comparison.",
+      "baseline_id": "15f52e5d80a9281e6940d02c9243a15a3686e6a92f7e504436e65d2e0bc273bc"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.6052984194088231,
+      0.34615780045588995,
+      0.6058544007667916,
+      0.45,
+      0.6075429041677965,
+      0.6184880875626106,
+      0.3490724420013246
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.13911858499999996,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.18792511238095244,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.3221710971075378,
+      "tau_c": 0.2,
+      "rho_p": 0.5909420289855072,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6273663233928573,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.1985502100840337,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  },
+  "neighborhood_d_w1_1": {
+    "metadata": {
+      "name": "neighborhood_d_w1_1",
+      "version": "0.4.0",
+      "regime": "interior_upper",
+      "baseline_seed": [
+        0.6,
+        0.35,
+        0.6,
+        0.45,
+        0.6,
+        0.6,
+        0.35
+      ],
+      "status": "Synthetic branch-aware mechanism comparison.",
+      "baseline_id": "fb2b207a073cf53d4ee09660406c4ebdd5e11833281d561aef4ff1a9fa80c57f"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.5937596142588661,
+      0.3545507606345268,
+      0.5933370870446013,
+      0.45,
+      0.591184570542189,
+      0.5803455219821169,
+      0.3510909376672934
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.13911858499999996,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.18792511238095244,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.3221710971075378,
+      "tau_c": 0.2,
+      "rho_p": 0.5909420289855072,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6934048837500002,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.1985502100840337,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  },
+  "neighborhood_h_w2_0": {
+    "metadata": {
+      "name": "neighborhood_h_w2_0",
+      "version": "0.4.0",
+      "regime": "interior_upper",
+      "baseline_seed": [
+        0.6,
+        0.35,
+        0.6,
+        0.45,
+        0.6,
+        0.6,
+        0.35
+      ],
+      "status": "Synthetic branch-aware mechanism comparison.",
+      "baseline_id": "549c0908289bfac31fe5516e1795495add516a970e2df73474e010479a9df2d9"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.30259983825695097,
+      0.5747478179418546,
+      0.3830767323623293,
+      0.45,
+      0.2306801715806213,
+      0.25688622507512693,
+      0.4090997320444971
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.13911858499999996,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.18792511238095244,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.3221710971075378,
+      "tau_c": 0.2,
+      "rho_p": 0.5909420289855072,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6603856035714287,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.138622699579832,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  },
+  "neighborhood_h_w2_1": {
+    "metadata": {
+      "name": "neighborhood_h_w2_1",
+      "version": "0.4.0",
+      "regime": "interior_upper",
+      "baseline_seed": [
+        0.6,
+        0.35,
+        0.6,
+        0.45,
+        0.6,
+        0.6,
+        0.35
+      ],
+      "status": "Synthetic branch-aware mechanism comparison.",
+      "baseline_id": "0bc7ed75ad70c2e9490b8ff26171526c58d3add67d9ed144abd5cc9c598009a0"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.6624378645859047,
+      0.30068706510196413,
+      0.6570336022352801,
+      0.45,
+      0.6877676581852386,
+      0.6944747504313181,
+      0.32815606260835795
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.13911858499999996,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.18792511238095244,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.3221710971075378,
+      "tau_c": 0.2,
+      "rho_p": 0.5909420289855072,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6603856035714287,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.2584777205882354,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  }
+}

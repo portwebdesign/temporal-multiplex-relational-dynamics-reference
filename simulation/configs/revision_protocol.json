@@ -1,0 +1,242 @@
+{
+  "status": "Declared synthetic mechanism comparison; all coefficients illustrative, no fitting or trajectory selection.",
+  "solver": {
+    "method": "classical_runge_kutta_4",
+    "dt": 0.02,
+    "time_horizon": 20
+  },
+  "new_parameters": {
+    "a_conflict": 0.3,
+    "lambda_d": 0.2,
+    "lambda_h": 0.15,
+    "k_visibility": 0,
+    "k_access": 0,
+    "k_input": 0,
+    "k_isolation": 0
+  },
+  "network": {
+    "baseline": {
+      "dimension": 1,
+      "layer_scales": [
+        1,
+        1,
+        1
+      ],
+      "support_scale": 1,
+      "psi_scale": 1,
+      "coupling": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0.2
+        ],
+        [
+          0,
+          0.2,
+          0
+        ]
+      ],
+      "demand_edges": [
+        {
+          "layer": 1,
+          "weight": 1,
+          "magnitude": 0.15,
+          "direction": [
+            1
+          ]
+        },
+        {
+          "layer": 2,
+          "weight": 1,
+          "magnitude": 0.15,
+          "direction": [
+            1
+          ]
+        }
+      ],
+      "support_edges": [
+        {
+          "weight": 1,
+          "support": 1
+        }
+      ]
+    },
+    "schedule": [
+      {
+        "start": 5,
+        "end": 10,
+        "network": {
+          "dimension": 1,
+          "layer_scales": [
+            1,
+            1,
+            1
+          ],
+          "support_scale": 1,
+          "psi_scale": 1,
+          "coupling": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0.2
+            ],
+            [
+              0,
+              0.2,
+              0
+            ]
+          ],
+          "demand_edges": [
+            {
+              "layer": 1,
+              "weight": 1,
+              "magnitude": 1,
+              "direction": [
+                1
+              ]
+            },
+            {
+              "layer": 2,
+              "weight": 1,
+              "magnitude": 1,
+              "direction": [
+                1
+              ]
+            }
+          ],
+          "support_edges": [
+            {
+              "weight": 1,
+              "support": 1
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "input_pulse": [
+    {
+      "start": 5,
+      "end": 10,
+      "values": {
+        "delay": 0.6,
+        "boundary": 0.7,
+        "review": 0.6
+      }
+    }
+  ],
+  "comparisons": {
+    "aligned": {
+      "opposed": false
+    },
+    "opposed": {},
+    "aligned_no_conflict": {
+      "opposed": false,
+      "parameters": {
+        "a_conflict": 0
+      }
+    },
+    "opposed_no_conflict": {
+      "parameters": {
+        "a_conflict": 0
+      }
+    },
+    "opposed_no_external": {
+      "parameters": {
+        "lambda_d": 0
+      }
+    },
+    "opposed_no_support": {
+      "parameters": {
+        "lambda_h": 0
+      }
+    },
+    "opposed_reduced": {
+      "reduced": true
+    },
+    "opposed_tradeoffs": {
+      "parameters": {
+        "k_visibility": 0.1,
+        "k_access": 0.08,
+        "k_input": 0.2,
+        "k_isolation": 0.2
+      }
+    },
+    "opposed_inputs": {
+      "inputs": true
+    },
+    "opposed_tradeoffs_inputs": {
+      "inputs": true,
+      "parameters": {
+        "k_visibility": 0.1,
+        "k_access": 0.08,
+        "k_input": 0.2,
+        "k_isolation": 0.2
+      }
+    },
+    "aligned_reduced": {
+      "opposed": false,
+      "reduced": true
+    }
+  },
+  "sensitivity_ranges": {
+    "a_conflict": [
+      0,
+      0.15,
+      0.3,
+      0.6
+    ],
+    "lambda_d": [
+      0,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "k_input": [
+      0,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "k_isolation": [
+      0,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "lambda_h": [
+      0,
+      0.075,
+      0.15,
+      0.3
+    ],
+    "k_visibility": [
+      0,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "k_access": [
+      0,
+      0.04,
+      0.08,
+      0.16
+    ]
+  },
+  "outcomes": {
+    "primary": "r at t=10 and t=20",
+    "secondary": "terminal w1 and w2; minimum r; maximum aligned time-grid state error at dt,dt/2,dt/4",
+    "reduction": "Two active coordinates r,w2; s,e,c,p,w1 frozen at initial values, no fitting or empirical optimality claim."
+  },
+  "range_rationale": "Zero, half, nominal, and twice the nominal new-path coefficient are transparent structural stress tests; no probabilistic or population interpretation."
+}

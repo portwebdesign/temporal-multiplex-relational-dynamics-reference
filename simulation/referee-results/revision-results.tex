@@ -1,0 +1,115 @@
+% Generated from the declared branch-aware protocol and numerical report.
+
+The primary experiment starts from the specified interior stationary reference
+
+\[\bm x^\star_{\mathrm{upper}}=[0.60,0.35,0.60,0.45,0.60,0.60,0.35]^{\top}.\]
+
+Six gain--loss coefficients are obtained from the stationary equations at this reference. The remaining coefficients retain their declared values. The same constructed parameter set also has a lower attracting stationary branch reached from the lower starting seeds. A separately specified coefficient set supplies a saturation regime. Table~\ref{tab:regime-baselines} records their distinct initial states; permeability is $0.45$ in all three.
+
+\begin{table}[H]\centering\footnotesize
+
+\begin{tabularx}{\textwidth}{@{}Yrrrrrr@{}}\toprule
+
+Stationary regime & $s$ & $e$ & $r$ & $p$ & $w_1$ & $w_2$ \\\midrule
+
+Constructed upper branch & 0.6000 & 0.3500 & 0.6000 & 0.6000 & 0.6000 & 0.3500 \\
+
+Constructed lower branch & 0.3661 & 0.5263 & 0.4228 & 0.3019 & 0.3111 & 0.3879 \\
+
+Saturation regime & 0.0968 & 0.8707 & 0.3422 & 0.0102 & 0.3225 & 0.9043 \\
+
+\bottomrule\end{tabularx}
+
+\caption{Stationary references used for the declared parameter and branch comparisons. The two constructed branches share every coefficient; the saturation regime uses a different coefficient set.}\label{tab:regime-baselines}\end{table}
+
+During $5\leq t<10$, demand marks in layers 2 and 3 rise from $0.15$ to $1$. Source-preserving transmission gives $d_{\mathrm{ext}}=\frac{9}{34}\approx 0.26$ before the pulse and $\frac{12}{17}\approx 0.71$ during it. Opposed demands give $\chi=\frac{144}{169}\approx 0.85$, while aligned demands give zero directional conflict. The baseline inputs are $\bm u_0=[0.20,0.35,0.30]^{\top}$.
+
+The primary direction, pathway-removal, and full--core comparisons keep $c_{\mathrm{tar}}=0.45$ and these inputs fixed. Permeability therefore remains at its stationary target. A separate intervention shifts the target to $0.35$ during the opposed pulse and then restores it. Its context control retains that target schedule while demand stays at baseline. The two-state core fixes all background coordinates at the same stationary state as its paired full model.
+
+We report the resource response $\delta r(t)=r_{\mathrm{pulse}}(t)-r_{\mathrm{context}}(t)$ and the corresponding load response $\delta w_2(t)$. For the fixed-context comparisons, the context control is the stationary baseline. Each deviation index $V$ uses its own full-system reference and equal weights.
+
+\begin{table}[H]\centering\footnotesize
+
+\begin{tabularx}{\textwidth}{@{}Yrrrrr@{}}\toprule
+
+Declared comparison & $r(10)$ & $r(20)$ & $\max_t|\delta r(t)|$ & $\max_t\delta w_2(t)$ & $10^3 V(10)$ \\\midrule
+
+Aligned & 0.5760 & 0.5736 & 0.0302 & 0.1106 & 7.0572 \\
+
+Opposed & 0.4619 & 0.5482 & 0.1381 & 0.1129 & 21.2176 \\
+
+Conflict path off & 0.5760 & 0.5736 & 0.0302 & 0.1106 & 7.0572 \\
+
+External path off & 0.6822 & 0.8252 & 0.1588 & 0.0020 & 14.6623 \\
+
+Support path off & 0.2527 & 0.3078 & 0.0766 & 0.1021 & 10.1513 \\
+
+Two-state core & 0.4769 & 0.5915 & 0.1231 & 0.1086 & 13.4761 \\
+
+Upstream filtering & 0.4653 & 0.5498 & 0.1357 & 0.1137 & 19.9868 \\
+
+Counter-mechanism & 0.3958 & 0.4674 & 0.0911 & 0.1071 & 13.2312 \\
+
+Stronger inputs & 0.5322 & 0.6564 & 0.1476 & 0.0799 & 17.6372 \\
+
+Counter, stronger inputs & 0.3100 & 0.5133 & 0.0557 & 0.0796 & 33.4335 \\
+
+Boundary target shift & 0.4662 & 0.5560 & 0.1384 & 0.1146 & 21.3221 \\
+
+\bottomrule\end{tabularx}
+
+\caption{Synthetic pulse responses. Maxima cover $0\leq t\leq20$; the resource column uses absolute response magnitude. Backgrounds are initialized separately for structural parameter changes. The target intervention is a separate comparison.}\label{tab:synthetic-results}\end{table}
+
+In the upper-branch comparison, aligned demand produces a peak load response of $0.1106$ and a maximum resource departure of $0.0302$. Opposed demand produces a maximum resource departure of $0.1381$. The opposed-minus-aligned resource contrast is $-0.1141$ at $t=10$ and $-0.0254$ at $t=20$. Its largest magnitude is $0.1141$ at $t=10.00$. Removing the conflict pathway makes the matched directional trajectories coincide.
+
+The full-minus-core difference in opposed demand responses is $-0.0149$ at $t=10$ and $-0.0433$ at $t=20$. The comparison permits several coordinates to evolve together; it measures their combined consequence. For the main opposed pulse, $V(10)=0.0212$ and $V(20)=0.0091$. Complete coordinate spans, response timing, integrals, and one-unit changes in $V$ are supplied with the experiment.
+
+\begin{table}[H]\centering\footnotesize
+
+\begin{tabularx}{\textwidth}{@{}Yrrrrr@{}}\toprule
+
+Stationary regime & $1-w_2^\star$ & $\lambda_d(1-w_2^\star)$ & Aligned $\max|\delta r|$ & Opposed $\max|\delta r|$ & Full--core $\Delta_{10}$ \\\midrule
+
+Constructed upper branch & 0.6500 & 0.1300 & 0.0302 & 0.1381 & -0.0149 \\
+
+Constructed lower branch & 0.6121 & 0.1224 & 0.0198 & 0.0984 & -0.0104 \\
+
+Saturation regime & 0.0957 & 0.0191 & 0.0021 & 0.0343 & -0.0049 \\
+
+\bottomrule\end{tabularx}
+
+\caption{Branch and parameter-regime dependence. $\Delta_{10}$ is the full-minus-core difference of matched opposed-demand responses at $t=10$. The local derivative isolates the load-headroom factor; differences between parameter regimes also reflect their other coefficients.}\label{tab:regime-responses}\end{table}
+
+The pathway analysis retains the declared coefficient and normalization ranges. In a separate neighborhood analysis, each of the six constructed coefficients is perturbed by $\pm5\%$ without rebalancing the others. Stationary resource references range from $0.3809$ to $0.6570$. The four $5\%$ reductions in $a_s$, $a_e$, $\rho_p$, and $h_{w2}$ settle at lower resource reference states, with $r^\star$ between $0.3809$ and $0.3905$. The pulse responses therefore depend on these altered backgrounds as well as on the changed coefficient.
+
+Subsequent basal-forcing relaxation returns all three main pulse outcomes to the upper stationary reference. Their remaining departures at $t=20$ occur during the finite observation window; the separate return probes record the eventual stationary outcomes.
+
+Continuous triangular demand marks supply matched rising and falling pressure branches. For each fixed direction, marks rise from $0.15$ to $1$ and return over half-cycle durations of $5$, $10$, or $20$. Direction is present before the cycle: aligned cycles start at $r^\star=0.6000$ with $\chi^\star=0.0000$, whereas opposed cycles start at $r^\star=0.3569$ with $\chi^\star=0.1147$. Each cycle therefore uses its own stationary baseline. Signed and absolute branch areas are evaluated over the same external-demand range; endpoint gaps record incomplete return of the output.
+
+Each cycle family is interpreted relative to its own direction-specific reference; the common-start pulse experiment supplies the matched direction contrast.
+
+\begin{table}[H]\centering\small
+
+\begin{tabular}{@{}lrrrr@{}}\toprule
+
+Direction & Half-cycle duration & $\mathcal H_{r,d_{\mathrm{ext}}}$ & $\mathcal H_{\mathrm{abs}}$ & Endpoint $\Delta r$ \\\midrule
+
+Aligned & 5 & 0.01219 & 0.01219 & -0.03662 \\
+
+Aligned & 10 & 0.02273 & 0.02273 & -0.06659 \\
+
+Aligned & 20 & 0.03913 & 0.03913 & -0.11525 \\
+
+Opposed & 5 & 0.02369 & 0.02369 & -0.06304 \\
+
+Opposed & 10 & 0.02637 & 0.02637 & -0.06932 \\
+
+Opposed & 20 & 0.02575 & 0.02575 & -0.06952 \\
+
+\bottomrule\end{tabular}
+
+\caption{Finite-rate branch separation for both directional conditions. A vertical closure at the common low input contributes zero to the signed input--output integral; the reported output gap is retained.}\label{tab:cycle-statistics}\end{table}
+
+The interpolated branch difference has one orientation in these cycles, so absolute area equals the magnitude of signed area. Figure~\ref{fig:cycles} shows one absolute-area curve for each direction condition. The duration dependence describes the response at the specified rates.
+
+Aligned cycles with half-cycle durations $5$ and $10$ relax to the upper stationary branch under basal forcing. The aligned cycle with half-cycle duration $20$ relaxes to the lower stationary branch under basal forcing. The opposed cycles return to their direction-specific stationary reference. These return checks assess the full terminal state separately from the scalar branch-area summary.
