@@ -1,0 +1,347 @@
+{
+  "version": "0.3.0",
+  "status": "Declared synthetic stationary-baseline experiment; no coefficient fitting or trajectory selection.",
+  "question": "How do source-preserving demand amplification, direction and controlled state evolution affect perturbations from a stationary baseline?",
+  "solver": {
+    "method": "classical_runge_kutta_4",
+    "dt": 0.02,
+    "time_horizon": 20
+  },
+  "initialization": {
+    "method": "bounded_time_relaxation",
+    "dt": 0.2,
+    "tolerance": 1e-11,
+    "max_time": 2000,
+    "check_interval": 1,
+    "seed": [
+      0.55,
+      0.35,
+      0.6,
+      0.45,
+      0.6,
+      0.65,
+      0.4
+    ]
+  },
+  "equilibrium_audit_seeds": [
+    [
+      0.2,
+      0.2,
+      0.2,
+      0.45,
+      0.2,
+      0.2,
+      0.2
+    ],
+    [
+      0.8,
+      0.8,
+      0.8,
+      0.45,
+      0.8,
+      0.8,
+      0.8
+    ]
+  ],
+  "bridge_parameters": {
+    "a_conflict": 0.3,
+    "lambda_d": 0.2,
+    "lambda_h": 0.15,
+    "k_visibility": 0,
+    "k_access": 0,
+    "k_input": 0,
+    "k_isolation": 0
+  },
+  "network": {
+    "baseline": {
+      "dimension": 1,
+      "layer_scales": [
+        1,
+        1,
+        1
+      ],
+      "support_scale": 1,
+      "psi_scale": 1,
+      "coupling": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0.2
+        ],
+        [
+          0,
+          0.2,
+          0
+        ]
+      ],
+      "demand_edges": [
+        {
+          "layer": 1,
+          "weight": 1,
+          "magnitude": 0.15,
+          "direction": [
+            1
+          ]
+        },
+        {
+          "layer": 2,
+          "weight": 1,
+          "magnitude": 0.15,
+          "direction": [
+            1
+          ]
+        }
+      ],
+      "support_edges": [
+        {
+          "weight": 1,
+          "support": 1
+        }
+      ]
+    },
+    "schedule": [
+      {
+        "start": 5,
+        "end": 10,
+        "network": {
+          "dimension": 1,
+          "layer_scales": [
+            1,
+            1,
+            1
+          ],
+          "support_scale": 1,
+          "psi_scale": 1,
+          "coupling": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0.2
+            ],
+            [
+              0,
+              0.2,
+              0
+            ]
+          ],
+          "demand_edges": [
+            {
+              "layer": 1,
+              "weight": 1,
+              "magnitude": 1,
+              "direction": [
+                1
+              ]
+            },
+            {
+              "layer": 2,
+              "weight": 1,
+              "magnitude": 1,
+              "direction": [
+                1
+              ]
+            }
+          ],
+          "support_edges": [
+            {
+              "weight": 1,
+              "support": 1
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "permeability_target": {
+    "baseline": 0.45,
+    "schedule": [
+      {
+        "start": 5,
+        "end": 10,
+        "value": 0.35
+      }
+    ]
+  },
+  "input_pulse": [
+    {
+      "start": 5,
+      "end": 10,
+      "values": {
+        "delay": 0.6,
+        "boundary": 0.7,
+        "review": 0.6
+      }
+    }
+  ],
+  "comparisons": {
+    "aligned": {
+      "opposed": false
+    },
+    "opposed": {},
+    "aligned_no_conflict": {
+      "opposed": false,
+      "parameters": {
+        "a_conflict": 0
+      }
+    },
+    "opposed_no_conflict": {
+      "parameters": {
+        "a_conflict": 0
+      }
+    },
+    "opposed_no_external": {
+      "parameters": {
+        "lambda_d": 0
+      }
+    },
+    "opposed_no_support": {
+      "parameters": {
+        "lambda_h": 0
+      }
+    },
+    "opposed_reduced": {
+      "reduced": true
+    },
+    "opposed_tradeoffs": {
+      "parameters": {
+        "k_visibility": 0.1,
+        "k_access": 0.08,
+        "k_input": 0.2,
+        "k_isolation": 0.2
+      }
+    },
+    "opposed_inputs": {
+      "inputs": true
+    },
+    "opposed_tradeoffs_inputs": {
+      "inputs": true,
+      "parameters": {
+        "k_visibility": 0.1,
+        "k_access": 0.08,
+        "k_input": 0.2,
+        "k_isolation": 0.2
+      }
+    },
+    "aligned_reduced": {
+      "opposed": false,
+      "reduced": true
+    },
+    "opposed_constant_target": {
+      "target_pulse": false
+    },
+    "opposed_reduced_constant_target": {
+      "target_pulse": false,
+      "reduced": true
+    },
+    "opposed_filtered": {
+      "moderation": [
+        0,
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "controls": "For every comparison, emit a stationary no-pulse control and a context control retaining the declared input/target/filter schedule while demand magnitudes and directions remain at baseline.",
+  "sensitivity_ranges": {
+    "a_conflict": [
+      0,
+      0.15,
+      0.3,
+      0.6
+    ],
+    "lambda_d": [
+      0,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "k_input": [
+      0,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "k_isolation": [
+      0,
+      0.1,
+      0.2,
+      0.4
+    ],
+    "lambda_h": [
+      0,
+      0.075,
+      0.15,
+      0.3
+    ],
+    "k_visibility": [
+      0,
+      0.05,
+      0.1,
+      0.2
+    ],
+    "k_access": [
+      0,
+      0.04,
+      0.08,
+      0.16
+    ]
+  },
+  "normalization_sensitivity": {
+    "parameter": "psi_scale",
+    "values": [
+      0.5,
+      1,
+      2
+    ]
+  },
+  "cycle_experiment": {
+    "baseline_mark": 0.15,
+    "peak_mark": 1,
+    "start": 5,
+    "phase_durations": [
+      5,
+      10,
+      20
+    ],
+    "recovery_after_cycle": 5,
+    "permeability_target": 0.45,
+    "directions": [
+      "aligned",
+      "opposed"
+    ],
+    "axis": "external_demand",
+    "output": "r",
+    "statistics": "Signed integral and absolute branch separation over matched rising/falling pressure branches; dimensionless finite-rate descriptors."
+  },
+  "outcomes": {
+    "primary": [
+      "r(10)",
+      "r(20)",
+      "pulse minus context-control resource contrast",
+      "maximum absolute contrast and its time"
+    ],
+    "secondary": [
+      "w1(20)",
+      "w2(20)",
+      "V(10)",
+      "V(20)",
+      "DeltaV_1 at10",
+      "all-coordinate spans",
+      "pre-pulse drift",
+      "core/full difference of demand-response contrasts"
+    ],
+    "deviation_reference": "Each structural variant uses its own full-system baseline equilibrium with equal coordinate weights; common nominal-reference values are also supplied.",
+    "detectability": "No measurement-error model or empirical power claim is supplied. Normalized model-coordinate contrasts are not percentages of human functioning."
+  },
+  "range_rationale": "Zero, half, nominal, and twice nominal pathway values; the nominal a_conflict=.30 is retained. The additional psi_scale values examine normalization dependence. All results are emitted."
+}

@@ -1,0 +1,73 @@
+% Generated from the declared stationary-baseline protocol and numerical report.
+
+Each structural variant is initialized by baseline relaxation until the infinity norm of its full vector field is at most $10^{-11}$. The nominal stationary state is approximately \begin{gather*}\bm x^\star_{\mathrm{base}}\approx [0.0968,0.8707,0.3422,0.4500,0.0102,0.3225,0.9043]^{\top}.\end{gather*} Its full-field residual is $9.12\times10^{-12}$, and the baseline input is $\bm u_0=[0.20,0.35,0.30]^{\top}$. The unrounded stationary values are used in integration and supplied with their seed, step, residual and relaxation history in the supplement. The largest pre-pulse drift among the declared primary comparisons is $3.35\times10^{-11}$. Additional starting seeds are reported separately; these checks identify the selected stationary branch.
+
+During $5\leq t<10$, the two unit-weight demand edges in layers 2 and 3 increase their marks from $0.15$ to $1$, with aligned or opposed directions. The symmetric transmission coefficients are $\Gamma_{23}=\Gamma_{32}=0.2$. Source-preserving amplification gives $d_{\mathrm{ext}}=\frac{9}{34}\approx 0.26$ before the pulse and $\frac{12}{17}\approx 0.71$ during it. The opposed pulse gives $\chi=\frac{144}{169}\approx 0.85$; the aligned signal has zero directional conflict. The nominal conflict coefficient remains $a_{\mathrm{conflict}}=0.30$.
+
+The primary comparisons shift the declared permeability target from $0.45$ to $0.35$ during the pulse and back afterwards. Both direction conditions receive the same target schedule. Separate constant-target comparisons and context controls distinguish this exogenous drive from demand and cross-coordinate responses. The two-state core starts at the same full-system baseline equilibrium and fixes the remaining coordinates there. The counter-mechanism uses its own stationary baseline; its resource-benefit and cost coefficients remain $[0.10,0.08,0.20,0.20]^{\top}$. Stronger inputs use $[0.60,0.70,0.60]^{\top}$ during the pulse.
+
+For every comparison, a no-pulse control holds all baseline conditions fixed. A context control retains the input, permeability-target and upstream-filter schedules while keeping demand vectors at baseline. We define the demand-response contrast as $\delta r(t)=r_{\mathrm{pulse}}(t)-r_{\mathrm{context}}(t)$. The deviation index uses the corresponding full-system baseline as reference and equal weights; common nominal-reference values are also supplied in the data.
+
+\begin{table}[H]\centering\footnotesize
+
+\begin{tabularx}{\textwidth}{@{}Yrrrrr@{}}\toprule
+
+Declared comparison & $r(10)$ & $r(20)$ & $\max|\delta r|$ & $10^3V(10)$ & $10^3V(20)$ \\\midrule
+
+Aligned & 0.3457 & 0.3438 & 0.0020 & 2.2272 & 0.0409 \\
+
+Opposed & 0.3124 & 0.3403 & 0.0349 & 3.2451 & 0.0571 \\
+
+Conflict path off & 0.3457 & 0.3438 & 0.0020 & 2.2272 & 0.0409 \\
+
+External path off & 0.3185 & 0.3468 & 0.0342 & 2.9350 & 0.0481 \\
+
+Support path off & 0.2496 & 0.2715 & 0.0266 & 2.5943 & 0.0421 \\
+
+Two-state core & 0.3128 & 0.3406 & 0.0294 & 0.6744 & 0.0050 \\
+
+Full, constant target & 0.3079 & 0.3377 & 0.0343 & 1.4380 & 0.0412 \\
+
+Core, constant target & 0.3128 & 0.3406 & 0.0294 & 0.6744 & 0.0050 \\
+
+Upstream filtering & 0.3133 & 0.3404 & 0.0341 & 3.1716 & 0.0555 \\
+
+Counter-mechanism & 0.4136 & 0.4425 & 0.0327 & 3.1189 & 0.0515 \\
+
+Stronger inputs & 0.3367 & 0.3533 & 0.0390 & 8.4043 & 0.4170 \\
+
+Counter, stronger inputs & 0.3110 & 0.4464 & 0.0206 & 16.4514 & 0.2193 \\
+
+\bottomrule\end{tabularx}
+
+\caption{Stationary-baseline synthetic comparisons. $\delta r$ is the pulse-minus-context-control resource response; each $V$ uses its stated baseline reference, and the displayed deviation columns are multiplied by $10^3$. Full expanded tables include all controls, close-bond and load outputs, one-unit changes in $V$, coordinate spans, and contrast timing.}\label{tab:synthetic-results}\end{table}
+
+The opposed-minus-aligned resource contrast is $-0.0333$ at $t=10$ and $-0.0035$ at $t=20$; its maximum absolute value is $0.0333$ at $t=10.00$. These are uncalibrated normalized-coordinate differences. Their empirical detectability depends on a justified observation and measurement-error model. Removing the directional pathway makes the matched trajectories coincide (maximum state difference $0$). The figure displays both full-range states and an explicitly scaled contrast axis, preserving the magnitude of the computed response.
+
+With a constant permeability target, the difference between full and core demand-response contrasts is $-0.0049$ at $t=10$ and $-0.0028$ at $t=20$. This difference-of-differences removes pre-pulse drift and their matched context response. Remaining cross-coordinate changes are bundled, so assigning the difference to one feedback path would require further targeted removals. All seven coordinates change during the nominal target-shift comparisons, as verified by their recorded spans. The additional constant-target arms retain the separate interpretation of the prescribed permeability drive.
+
+Seven matched-direction endpoint comparisons examine four values of the conflict-path coefficient and three conflict-normalization scales $\Psi_0$. At $t=10$, opposed-minus-aligned contrasts range from $-0.0520$ to $0.0000$ across the coefficient range, and from $-0.0358$ to $-0.0293$ across the normalization scales. The aligned reference can be reused exactly for these settings because its conflict signal remains zero and its stationary initial state is unchanged. Other parameter sweeps retain the separately defined context-control comparison.
+
+Upstream filtering uses $\bm\sigma=[0,0.5,0.5]^{\top}$ during the pulse. It attenuates the transmitted component while preserving direct source demands. The supplement reports both resource and experienced-load responses for this comparison. Each cost/benefit variant and sensitivity condition is initialized on its own declared stationary branch, so comparisons represent responses around their respective baselines.
+
+A continuous triangular demand cycle provides the matched rising and falling branches required by the path statistics. Demand marks rise from $0.15$ to $1$ and return to $0.15$ over half-cycle durations of $5$, $10$, or $20$ model-time units. Direction is held fixed within a cycle and each cycle starts at its own low-demand equilibrium. Signed and absolute areas are evaluated on a common external-demand grid by piecewise-linear branch interpolation; output endpoint gaps are retained explicitly.
+
+\begin{table}[H]\centering\small
+
+\begin{tabular}{@{}rrrr@{}}\toprule
+
+Half-cycle duration & $\mathcal H_{r,d}$ & $\mathcal H_{\mathrm{abs}}$ & Endpoint $\Delta r$ \\\midrule
+
+5 & 0.00919 & 0.00919 & -0.02339 \\
+
+10 & 0.00924 & 0.00924 & -0.02167 \\
+
+20 & 0.00703 & 0.00703 & -0.01540 \\
+
+\bottomrule\end{tabular}
+
+\caption{Descriptive path separation for opposed triangular demand cycles. A vertical closure at the common low input contributes zero to $\int r\,\mathrm d d_{\mathrm{ext}}$; the output gap remains reported. These finite-rate comparisons do not identify rate-independent hysteresis.}\label{tab:cycle-statistics}\end{table}
+
+The branch-area estimator is checked separately from state integration. Across all six cycles, the maximum change in $\mathcal H_{\mathrm{abs}}$ is $4.83\times10^{-8}$ between steps $0.02$ and $0.01$, and $1.21\times10^{-8}$ between $0.01$ and $0.005$. The supplement also reports signed-area and endpoint-gap refinements. These interpolation/quadrature checks are distinct from the RK4 state-error comparison.
+
+Classical RK4 uses step $0.02$, with steps split at all schedule boundaries and continuous forcing evaluated at each RK stage. Repeating at $0.01$ and $0.005$ from the same unrounded initial states gives a maximum common-grid state difference of $6.09\times10^{-11}$ between the first two steps across pulse, control and sensitivity runs. Cycle refinements are reported separately. The seven pathway sweeps retain zero, half, nominal and twice-nominal values; three conflict-normalization scales $\Psi_0$ are also evaluated. Every declared condition is supplied, including adverse and timing-dependent outcomes.

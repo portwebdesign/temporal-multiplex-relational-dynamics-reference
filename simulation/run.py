@@ -1,8 +1,8 @@
 """Run a declared illustrative scenario from the command line.
 
 Usage:
-    python3 run.py configs/illustrative_baseline.json \
-        --output results/illustrative_baseline.csv
+    python3 simulation/run.py simulation/configs/illustrative_baseline.json \
+        --output simulation/results/illustrative_baseline.csv
 """
 
 from __future__ import annotations
@@ -26,7 +26,7 @@ def main() -> None:
     rows = simulate(configuration)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with args.output.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     print(f"Wrote {len(rows)} rows to {args.output}")

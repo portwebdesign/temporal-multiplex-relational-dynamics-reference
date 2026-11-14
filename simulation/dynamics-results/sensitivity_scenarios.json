@@ -1,0 +1,6393 @@
+{
+  "sensitivity_a_conflict_0": {
+    "metadata": {
+      "name": "sensitivity_a_conflict_0",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "6b583ebe5e7ecd2f4e55bf786cf03fc403f62871405361a20fe68b7716591ddf"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.09684324661397115,
+      0.8706997119152021,
+      0.34220759357196806,
+      0.45,
+      0.010172795061079388,
+      0.3225448590841501,
+      0.9042582812432383
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_a_conflict_1": {
+    "metadata": {
+      "name": "sensitivity_a_conflict_1",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "19e53e61f9d6e98ab9643fd35505ecb7dadd4978ce3c67fa961b629f6636ae9b"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.09684324661397115,
+      0.8706997119152021,
+      0.34220759357196806,
+      0.45,
+      0.010172795061079388,
+      0.3225448590841501,
+      0.9042582812432383
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.15,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_a_conflict_2": {
+    "metadata": {
+      "name": "sensitivity_a_conflict_2",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "0ba85a4941e7afdc9a3c92fb5727b46654825b33a9b5efd17f8dda14cc725966"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.09684324661397115,
+      0.8706997119152021,
+      0.34220759357196806,
+      0.45,
+      0.010172795061079388,
+      0.3225448590841501,
+      0.9042582812432383
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_a_conflict_3": {
+    "metadata": {
+      "name": "sensitivity_a_conflict_3",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "d99732968076837a298a9a34c2a044c59afe73fc8564f29937e105a8672185ff"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.09684324661397115,
+      0.8706997119152021,
+      0.34220759357196806,
+      0.45,
+      0.010172795061079388,
+      0.3225448590841501,
+      0.9042582812432383
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.6,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_lambda_d_0": {
+    "metadata": {
+      "name": "sensitivity_lambda_d_0",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "c19ae9f3ab14bfd35d12333f4f7971f082a76880dfcdcae6ec291ef061524377"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.09901197463862815,
+      0.8673090338775509,
+      0.34763657823355265,
+      0.45,
+      0.010667468819855664,
+      0.32835594804763535,
+      0.8715518950267299
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_lambda_d_1": {
+    "metadata": {
+      "name": "sensitivity_lambda_d_1",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "264bcc4f9084eaa88655951dfdd2190ff5d126e8124db1ec0153bbb36888ead9"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.0977564636921082,
+      0.8692755368966677,
+      0.3445012074506411,
+      0.45,
+      0.010379356782089363,
+      0.32500511838041346,
+      0.8903071329150389
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.1,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_lambda_d_2": {
+    "metadata": {
+      "name": "sensitivity_lambda_d_2",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "0ba85a4941e7afdc9a3c92fb5727b46654825b33a9b5efd17f8dda14cc725966"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.09684324661397115,
+      0.8706997119152021,
+      0.34220759357196806,
+      0.45,
+      0.010172795061079388,
+      0.3225448590841501,
+      0.9042582812432383
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_lambda_d_3": {
+    "metadata": {
+      "name": "sensitivity_lambda_d_3",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "5c48bb5fcaee09b71932d6d49b1fc5c567705f8a2bec9c3bb8cc79761f42eb49"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.09560223645966508,
+      0.87262655238383,
+      0.33907309770980476,
+      0.45,
+      0.009896118855815822,
+      0.3191701459705437,
+      0.9236464399437966
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.4,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_input_0": {
+    "metadata": {
+      "name": "sensitivity_k_input_0",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "95b1cb796bf579c923e4959108623bfe198c52af7e4d732a2339ea3196ab776e"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.13453859331508036,
+      0.8680714984158576,
+      0.4958423663463135,
+      0.45,
+      0.014257943631011705,
+      0.2682727604775227,
+      0.9039684723660779
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0.08,
+      "k_input": 0,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_input_1": {
+    "metadata": {
+      "name": "sensitivity_k_input_1",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "99486eb2adce4ee4f694abfad6876a50aa50a63e0a1fd2e74155e73758d5bc41"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.12790897902807027,
+      0.8685539421180747,
+      0.4679558758047843,
+      0.45,
+      0.013500153572779977,
+      0.2671050492826944,
+      0.90402537958002
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0.08,
+      "k_input": 0.1,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_input_2": {
+    "metadata": {
+      "name": "sensitivity_k_input_2",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "7ad15a692778ea6aa8d0d731017686ddfa5d90508bca49f99e1c121dcaff4c68"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.12190329229116469,
+      0.868984273478299,
+      0.4430427187051948,
+      0.45,
+      0.012819116437899255,
+      0.2660665294400956,
+      0.9040749098346341
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0.08,
+      "k_input": 0.2,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_input_3": {
+    "metadata": {
+      "name": "sensitivity_k_input_3",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "365d3106fc2390e42589348ee018f249ec4c99ef6413a8ba86402421fcd4b4b2"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.11144122021086507,
+      0.8697189627824831,
+      0.4004162077054035,
+      0.45,
+      0.011644836775406259,
+      0.2642998816643592,
+      0.9041566762716323
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0.08,
+      "k_input": 0.4,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_isolation_0": {
+    "metadata": {
+      "name": "sensitivity_k_isolation_0",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "5fbc41395abc6df7593ce5fbe29149eb24229a8c9e62e86eefa4d0f1975f429f"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.12375793740143257,
+      0.8688317310559337,
+      0.45027296613526147,
+      0.45,
+      0.013216959839738118,
+      0.3286880462232205,
+      0.9040546601687716
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0.08,
+      "k_input": 0.2,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_isolation_1": {
+    "metadata": {
+      "name": "sensitivity_k_isolation_1",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "8617d1f6722642fba89954027c8b422c5129b3d5e7b9bad10ec189d6cb0e3af2"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.1227388410851939,
+      0.8689158139602193,
+      0.446299355571442,
+      0.45,
+      0.012996943014517072,
+      0.29407208317788286,
+      0.9040658639331999
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0.08,
+      "k_input": 0.2,
+      "k_isolation": 0.1
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_isolation_2": {
+    "metadata": {
+      "name": "sensitivity_k_isolation_2",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "7ad15a692778ea6aa8d0d731017686ddfa5d90508bca49f99e1c121dcaff4c68"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.12190329229116469,
+      0.868984273478299,
+      0.4430427187051948,
+      0.45,
+      0.012819116437899255,
+      0.2660665294400956,
+      0.9040749098346341
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0.08,
+      "k_input": 0.2,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_isolation_3": {
+    "metadata": {
+      "name": "sensitivity_k_isolation_3",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "69e9712927f748f64241876a0e3796c75a75603a7574cebafea59879b7a008ef"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.12061444157032922,
+      0.8690890444016698,
+      0.43802176406768417,
+      0.45,
+      0.01254925009715963,
+      0.22351814475985732,
+      0.9040886215004881
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0.08,
+      "k_input": 0.2,
+      "k_isolation": 0.4
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_lambda_h_0": {
+    "metadata": {
+      "name": "sensitivity_lambda_h_0",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "edc9cd6d0cec4b7a4ad82b2a6ceb42d17774a1fa3e90cd40b8cf7f3bbaecd84a"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.07815320851082397,
+      0.8719749001051648,
+      0.2720474955046416,
+      0.45,
+      0.0075373260526663014,
+      0.0075819157296042015,
+      0.9043884020930669
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_lambda_h_1": {
+    "metadata": {
+      "name": "sensitivity_lambda_h_1",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "6aedb7c42dcbe0c96de3a030cffbb703fb84fa8cc2cf70c861b7f6566f314ba3"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.08973059963803744,
+      0.8711977411490156,
+      0.31529323059461056,
+      0.45,
+      0.009112030831725942,
+      0.19417737027796378,
+      0.9043114460790704
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.075,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_lambda_h_2": {
+    "metadata": {
+      "name": "sensitivity_lambda_h_2",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "0ba85a4941e7afdc9a3c92fb5727b46654825b33a9b5efd17f8dda14cc725966"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.09684324661397115,
+      0.8706997119152021,
+      0.34220759357196806,
+      0.45,
+      0.010172795061079388,
+      0.3225448590841501,
+      0.9042582812432383
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_lambda_h_3": {
+    "metadata": {
+      "name": "sensitivity_lambda_h_3",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "fac94b9fadb61f6191f2a0ff4a5671c622053ef9f4e637d22bbfff16c80798d8"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.105096826111958,
+      0.870099351534844,
+      0.3737479504615252,
+      0.45,
+      0.011508045579337845,
+      0.48685480733709946,
+      0.9041901116261896
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.3,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_visibility_0": {
+    "metadata": {
+      "name": "sensitivity_k_visibility_0",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "08098ecadc19f05035da38cea37430d0cd9d4dd328833c9031ad9ed5e2d52fd2"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.09046531040463562,
+      0.8711363459448896,
+      0.31779698739395507,
+      0.45,
+      0.00933540225001857,
+      0.2609126003409923,
+      0.9043037597440146
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0.08,
+      "k_input": 0.2,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_visibility_1": {
+    "metadata": {
+      "name": "sensitivity_k_visibility_1",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "86778b5ae3655c5863952abe1048b9168da540479da8c11906a1adafb65e0914"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.108053616952014,
+      0.8699528424774,
+      0.3868199166483694,
+      0.45,
+      0.011267849724148368,
+      0.2637391108862016,
+      0.9041819387549075
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.05,
+      "k_access": 0.08,
+      "k_input": 0.2,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_visibility_2": {
+    "metadata": {
+      "name": "sensitivity_k_visibility_2",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "7ad15a692778ea6aa8d0d731017686ddfa5d90508bca49f99e1c121dcaff4c68"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.12190329229116469,
+      0.868984273478299,
+      0.4430427187051948,
+      0.45,
+      0.012819116437899255,
+      0.2660665294400956,
+      0.9040749098346341
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0.08,
+      "k_input": 0.2,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_visibility_3": {
+    "metadata": {
+      "name": "sensitivity_k_visibility_3",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "de6c7f5628d18e0a8072f6275004d92989ce3655ae0029c5609f8e2bc13b6bed"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.14233703286338675,
+      0.8674938907316293,
+      0.5291741070184751,
+      0.45,
+      0.015157534511688855,
+      0.2696757459274976,
+      0.903898492108325
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.2,
+      "k_access": 0.08,
+      "k_input": 0.2,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_access_0": {
+    "metadata": {
+      "name": "sensitivity_k_access_0",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "b8108418f77f41b330b6a4ad475b533d9179ae020646c9f391c7804c860f595c"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.11654120230112523,
+      0.8693631748902837,
+      0.42107428975749617,
+      0.45,
+      0.012215363450025756,
+      0.2651544339963265,
+      0.9041175286377942
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0,
+      "k_input": 0.2,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_access_1": {
+    "metadata": {
+      "name": "sensitivity_k_access_1",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "eec72ec88c70ab1c525250ff85a6eec76fda5f1bbb1782f7a81d2a6b820acc6e"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.11928184829227602,
+      0.8691701347016039,
+      0.4322705810702538,
+      0.45,
+      0.01252344749258167,
+      0.26561885680468494,
+      0.90409593340106
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0.04,
+      "k_input": 0.2,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_access_2": {
+    "metadata": {
+      "name": "sensitivity_k_access_2",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "7ad15a692778ea6aa8d0d731017686ddfa5d90508bca49f99e1c121dcaff4c68"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.12190329229116469,
+      0.868984273478299,
+      0.4430427187051948,
+      0.45,
+      0.012819116437899255,
+      0.2660665294400956,
+      0.9040749098346341
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0.08,
+      "k_input": 0.2,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_k_access_3": {
+    "metadata": {
+      "name": "sensitivity_k_access_3",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "7be3932d807757778d1ef088a141bd056a58b3e6a73d4f3d081049aae2c8e6a2"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.12681835501616087,
+      0.868632560709876,
+      0.46340724067050587,
+      0.45,
+      0.013376096721800675,
+      0.2669151065566349,
+      0.9040345162240232
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "values": {
+            "delay": 0.6,
+            "boundary": 0.7,
+            "review": 0.6
+          }
+        }
+      ]
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.1,
+      "k_access": 0.16,
+      "k_input": 0.2,
+      "k_isolation": 0.2
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_psi_scale_0": {
+    "metadata": {
+      "name": "sensitivity_psi_scale_0",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "81c235ce55d24d805cf87a0cc94312d62b25aeb98e4d179c5791b09cd629b5a0"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.09684324661397115,
+      0.8706997119152021,
+      0.34220759357196806,
+      0.45,
+      0.010172795061079388,
+      0.3225448590841501,
+      0.9042582812432383
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 0.5,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 0.5,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_psi_scale_1": {
+    "metadata": {
+      "name": "sensitivity_psi_scale_1",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "0ba85a4941e7afdc9a3c92fb5727b46654825b33a9b5efd17f8dda14cc725966"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.09684324661397115,
+      0.8706997119152021,
+      0.34220759357196806,
+      0.45,
+      0.010172795061079388,
+      0.3225448590841501,
+      0.9042582812432383
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  },
+  "sensitivity_psi_scale_2": {
+    "metadata": {
+      "name": "sensitivity_psi_scale_2",
+      "version": "0.3.0",
+      "status": "Synthetic stationary-baseline mechanism comparison.",
+      "baseline_id": "a82f958951a2769005173938338ce798933ff23481a25f8a450e6d32065be4a8"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.02,
+      "time_horizon": 20
+    },
+    "initial_state": [
+      0.09684324661397115,
+      0.8706997119152021,
+      0.34220759357196806,
+      0.45,
+      0.010172795061079388,
+      0.3225448590841501,
+      0.9042582812432383
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "psi_max": 1.0,
+      "c_star": 0.5,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "rho_s": 0.18,
+      "a_s": 0.12,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.1,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.14,
+      "tau_c": 0.2,
+      "c_target": 0.45,
+      "rho_p": 0.16,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.12,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 0.1,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0,
+      "k_access": 0,
+      "k_input": 0,
+      "k_isolation": 0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 2,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 2,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1,
+                "direction": [
+                  -1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": [
+        {
+          "start": 5,
+          "end": 10,
+          "value": 0.35
+        }
+      ]
+    }
+  }
+}

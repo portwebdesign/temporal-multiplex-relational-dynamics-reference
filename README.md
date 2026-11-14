@@ -1,90 +1,82 @@
-# Temporal-Multiplex Relational Dynamics: Reference Implementation
+# Temporal--Multiplex Relational Dynamics: Reference Implementation
 
-This repository is a small, dependency-free reference implementation of the
-illustrative bounded seven-coordinate dynamical system in Appendix A of:
+This repository is the MIT-licensed reference implementation for the
+synthetic, source-preserving mechanism reported in:
 
 > Yalçın, M., & Karslı, O. (2026). *A Transparent Temporal--Multiplex
 > Framework for Relational Dynamics, Cross-Domain Spillover, and
 > Self-Regulation*.
 
-It is deliberately independent of the authors' working archive, exploratory
-notes, and any future product. It contains only the declared ODE mechanism, a
-fully specified non-empirical scenario, a command-line runner, a one-factor
-sensitivity utility, and regression tests.
+Release **v0.3.0** implements the stationary-baseline dynamics used by the
+current article. It supersedes the historical v0.1.1 implementation, which
+remains available through its Git tag but does not reproduce this model.
 
-## What this repository does—and does not—provide
+## Scope
 
-The code implements the declared Appendix A mechanism used by the baseline
-scenario, including the scalar pressure and exposure proxies and classical
-fourth-order Runge--Kutta (RK4) integration. Every numerical value is visible
-in the scenario JSON file. The baseline specializes the appendix's exogenous
-$c_{\mathrm{tar}}(t)$ target to a constant `c_target`; it does not implement a
-time-varying target-path interface, the main-text directional-conflict vectors,
-or the path statistic.
+The model keeps each source demand's action direction while direct and
+cross-layer transmission scale its magnitude. It computes external demand,
+source-preserving directional conflict, support, and a bounded seven-coordinate
+ODE. The included experiment uses declared, synthetic and uncalibrated
+scenarios; it is not fitted to human data and does not supply clinical,
+diagnostic, employment, insurance, legal, or person-level predictions.
 
-It does **not** contain fitted parameters, human-subject data, clinical
-thresholds, a validated measurement instrument, person-level predictions, or
-a decision-support system. A successful numerical run illustrates the behavior
-of declared assumptions; it is not empirical evidence that those assumptions
-hold in a population.
+The repository contains only the implementation, configurations, tests, and
+recorded synthetic outputs needed to reproduce the v0.3.0 article results. It
+does not include the authors' private notes, reviewer material, or manuscripts.
 
 ## Requirements
 
-Python 3.9 or later. The reference implementation uses only the Python
-standard library; no package installation is required.
+Python 3.9 or later is required. The numerical model uses only the Python
+standard library. Rebuilding the two vector figures also requires Tectonic and
+Poppler (`pdftoppm`).
 
-## Run the declared baseline scenario
+## Reproduce the declared experiment
 
 From the repository root:
 
 ```sh
-python3 run.py configs/illustrative_baseline.json \
-  --output results/illustrative_baseline.csv
+python3 -m unittest discover -s simulation/tests -v
+python3 simulation/revision_experiments.py \
+  --protocol simulation/configs/dynamics_protocol.json \
+  --output /tmp/temporal-multiplex-results --render
 ```
 
-The resulting CSV contains time, the seven normalized coordinates, the three
-declared inputs, and the scalar pressure and exposure proxies.
+The full run evaluates stationary baselines, pulse/control comparisons,
+sensitivity conditions, continuous cycles, and numerical step refinements. It
+writes a self-contained result directory under the path passed to `--output`.
+The committed `simulation/dynamics-results/` directory is the v0.3.0 result
+snapshot used for the release.
 
-## Run a declared sensitivity sweep
+For a single declared scenario or a simple one-factor sweep:
 
 ```sh
-python3 sensitivity.py configs/illustrative_baseline.json \
+python3 simulation/run.py simulation/configs/illustrative_baseline.json \
+  --output /tmp/illustrative_baseline.csv
+python3 simulation/sensitivity.py simulation/configs/illustrative_baseline.json \
   --parameter a1 --values 0.10,0.20,0.30,0.40 \
-  --output results/a1_terminal_sensitivity.csv
+  --output /tmp/a1_terminal_sensitivity.csv
 ```
-
-This is a transparent one-factor mechanism check, not uncertainty
-quantification, parameter estimation, or a population-level result.
-
-## Run the tests
-
-```sh
-python3 -m unittest discover -s tests -v
-```
-
-The regression suite checks the declared pressure bound, the baseline
-trajectory's normalized domain, Appendix A parameter-domain validation,
-configuration validation, and a documented structural invariant of this
-candidate mechanism.
 
 ## Repository layout
 
 ```text
-model.py                              # Appendix A equations and RK4 solver
-run.py                                # Scenario-to-CSV command-line runner
-sensitivity.py                        # One-factor sensitivity utility
-configs/illustrative_baseline.json    # Fully declared non-empirical scenario
-tests/test_model.py                   # Regression tests
+simulation/
+  analysis.py                    # Stationary states, deviations, and cycle statistics
+  model.py                       # Bounded gain--loss ODE and RK4 solver
+  network.py                     # Source-preserving temporal-multiplex aggregation
+  revision_experiments.py        # Full v0.3.0 experiment and figure generator
+  configs/dynamics_protocol.json # Declared protocol
+  tests/                         # 53 regression and mathematical checks
+  dynamics-results/              # Recorded v0.3.0 synthetic results and figures
 ```
 
-## Reuse and citation
+## Licence and citation
 
-This software is released under the [MIT License](LICENSE). Reuse, adaptation,
-redistribution, and commercial use are permitted subject to that license. If
-you use it in research, cite the software release and the accompanying
-conceptual article; machine-readable citation metadata are in
+All code, configurations, tests, and committed synthetic outputs in this
+repository are released under the [MIT License](LICENSE). Please cite release
+v0.3.0 and the accompanying article; machine-readable metadata are in
 [`CITATION.cff`](CITATION.cff).
 
-The article and this reference implementation should not be represented as a
-validated analytical, diagnostic, clinical, employment, insurance, legal, or
-relationship-decision system.
+The mathematical and numerical checks establish consistency of the declared
+mechanism. They do not validate the proposed psychological constructs or prove
+that the synthetic effect sizes occur in human observations.

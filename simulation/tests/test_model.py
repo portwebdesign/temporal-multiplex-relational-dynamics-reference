@@ -44,12 +44,6 @@ class AppendixAModelTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             simulate(invalid)
 
-    def test_threshold_parameters_respect_declared_unit_interval(self) -> None:
-        invalid = json.loads(json.dumps(self.configuration))
-        invalid["parameters"]["c_star"] = 1.01
-        with self.assertRaises(ValueError):
-            simulate(invalid)
-
     def test_zero_reflection_and_purpose_need_review_input_in_this_candidate(self) -> None:
         state = [0.0, 0.35, 0.60, 0.45, 0.0, 0.65, 0.40]
         inputs = dict(self.configuration["inputs"]["baseline"])

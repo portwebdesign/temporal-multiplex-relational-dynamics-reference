@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this reference implementation, please cite it using these metadata."
 type: software
 title: "Temporal-Multiplex Relational Dynamics: Reference Implementation"
-version: 0.1.1
-date-released: 2026-11-13
+version: 0.3.0
+date-released: 2026-11-14
 license: MIT
 repository-code: "https://github.com/portwebdesign/temporal-multiplex-relational-dynamics-reference"
 authors:
