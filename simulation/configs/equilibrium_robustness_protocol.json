@@ -1,0 +1,43 @@
+{
+  "version": "equilibrium-robustness-1",
+  "date": "2026-11-15",
+  "stage": "Follow-on mechanism robustness study specified after the previous plus/minus-five-percent sensitivity results were known, before these continuation outcomes. This is an internal analysis specification, not external preregistration.",
+  "question": "Over what local one-coefficient ranges do the constructed stationary branches persist, and do the previously observed lower relaxation outcomes reflect branch loss or remain compatible with a basin change?",
+  "source_protocol": "configs/referee_protocol.json",
+  "equations": "Unchanged model.py derivative and regimes.py analytic_jacobian, under the original aligned basal forcing and original constant inputs and permeability target.",
+  "parameters": ["a_s", "a_e", "eta_r", "rho_p", "d_w1", "h_w2"],
+  "factor_interval": [0.9, 1.1],
+  "reference_seeds": ["constructed upper state", "recorded constructed lower attracting state"],
+  "continuation": {
+    "method": "Predictor-corrector pseudo-arclength in the seven state coordinates and one dimensionless coefficient factor; analytic state Jacobian and exact coefficient derivative. Both orientations from each nominal branch.",
+    "initial_arclength_step": 0.005,
+    "minimum_arclength_step": 0.000001,
+    "maximum_arclength_step": 0.01,
+    "maximum_steps_per_sweep": 1800,
+    "newton_max_iterations": 30,
+    "residual_tolerance": 1e-11,
+    "physical_bounds": [0.0, 1.0],
+    "state_handling": "Newton backtracking keeps states inside the physical cube; states and coefficients are never clipped. Nonphysical or unresolved corrections are retained as failure records. No pressure or permeability nonsmooth branch is assigned an arbitrary classical derivative.",
+    "termination": "Stop after crossing the declared factor boundary, returning close to a previously visited state after at least twenty steps, exhausted minimum step, or the maximum step budget. Boundary endpoint correction is attempted at exactly 0.9 or 1.1; all termination reasons are retained."
+  },
+  "fold_diagnostic": {
+    "candidate": "Sign change in factor component of the oriented continuation tangent.",
+    "correction": "Solve F(x,factor)=0, J(x,factor)*v=0 and v*v=1; correct only bracketed candidates, starting from the adjacent continuation points.",
+    "residual_tolerance": 1e-9,
+    "null_eigenvalue_tolerance": 1e-7,
+    "nondegeneracy_minimum_absolute": 1e-7,
+    "checks": "Check one simple zero eigenvalue and nonzero left-null-vector projections of F_factor and F_xx[v,v], with centered differences at steps 1e-4 and 5e-5. Record both; this is a numerical local-fold diagnosis, not an interval proof or a global bifurcation classification."
+  },
+  "stability": {
+    "stable_if_max_real_eigenvalue_below": -1e-8,
+    "unstable_if_max_real_eigenvalue_above": 1e-8,
+    "otherwise": "numerically marginal",
+    "scope": "Local linear stability of each reported smooth equilibrium only."
+  },
+  "fixed_factor_checks": [0.9, 0.95, 1.0, 1.05, 1.1],
+  "previous_relaxation_record": "presentation-results/neighborhood_sensitivity.csv",
+  "comparison_rule": "Locate and correct every distinct physical root crossed at each fixed factor. Compare the existing plus/minus-five-percent relaxation endpoints against those roots and their residuals. A continuation curve not found is not proof that no disconnected branch exists. Classify upper-branch loss only where a corrected, nondegenerate fold brackets its termination; otherwise retain unresolved status or persistent-branch/basin compatibility.",
+  "numerical_validation": "Known scalar saddle-node normal form, known linear equilibrium branch, analytic parameter derivatives against centered differences, original analytic Jacobian against centered state differences, full residual and forward/reverse crossing agreement. Repeat continuation at half initial/max step and compare corrected roots and folds.",
+  "outputs": "New equilibrium-robustness-prefixed CSV/JSON files in the existing recovery-research-results directory, plus an explanatory findings document in existing docs. Previous numerical results, model equations, manuscript and approved package are not overwritten.",
+  "interpretation": "Synthetic local one-parameter mechanism analysis. No empirical parameter uncertainty, population frequency, human clinical threshold, seven-state necessity or global branch completeness is inferred. All declared coefficients, branches, failures and refinements are retained irrespective of outcome."
+}

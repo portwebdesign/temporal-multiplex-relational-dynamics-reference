@@ -5,11 +5,11 @@ This MIT-licensed repository is the executable reference implementation for:
 > Yalçın, M., & Karslı, O. (2026). *Directional Demand and Resource
 > Dynamics: A Source-Preserving Model*.
 
-Release **v0.5.0** preserves the v0.4.1 source-preserving numerical record and
-adds the input-factorial regulation experiment and exposure-matched robustness
-checks reported in the current article. It is the exact public computational
-reference for that article. Historical v0.3.0, numerical v0.4.0, and
-presentation v0.4.1 tags remain available as preserved records.
+Release **v0.5.1** preserves the v0.5.0 record and adds the local stationary-
+branch continuation and cost--time regulatory-program robustness analyses
+reported in the current article. It is the exact public computational reference
+for that article. Historical v0.3.0, numerical v0.4.0, presentation v0.4.1,
+and v0.5.0 tags remain preserved records.
 
 ## Scope
 
@@ -32,12 +32,19 @@ working notes, reviewer material, and personal data.
 
 ## Requirements
 
-Python 3.9 or later is required. The numerical model uses only the Python
-standard library. Rebuilding the v0.4.1 presentation figures requires Tectonic
-and Poppler (`pdftoppm`); rendering the v0.5.0 regulation figure additionally
-requires Matplotlib.
+Python 3.9 or later is required. The original numerical model uses only the
+Python standard library. The v0.5.1 continuation and high-accuracy
+cost--time integration need NumPy and SciPy; the public figure renderers need
+Matplotlib. Install the tested public environment with:
 
-## Reproduce v0.5.0
+```sh
+python3 -m pip install -r requirements.txt
+```
+
+Rebuilding the v0.4.1 presentation figures additionally requires Tectonic and
+Poppler (`pdftoppm`).
+
+## Reproduce v0.5.1
 
 From the repository root:
 
@@ -58,6 +65,18 @@ python3 simulation/regulation_research.py \
 python3 simulation/render_regulation_figure.py \
   --results /tmp/directional-demand-regulation \
   --output /tmp/directional-demand-regulation/regulation-programs.pdf
+
+mkdir -p /tmp/directional-demand-equilibrium /tmp/directional-demand-cost-time
+python3 simulation/equilibrium_robustness.py \
+  --protocol simulation/configs/equilibrium_robustness_protocol.json \
+  --output /tmp/directional-demand-equilibrium
+
+python3 simulation/regulation_robustness.py \
+  --protocol simulation/configs/regulation_robustness_protocol.json \
+  --output /tmp/directional-demand-cost-time
+
+python3 simulation/render_robustness_figures.py \
+  --output /tmp/directional-demand-robustness-figures
 ```
 
 The complete run performs branch-aware stationary preparation, pulse and
@@ -74,6 +93,16 @@ whether favourable or unfavourable, and are not human intervention effects.
 `recovery-presentation-assets/` contains the exact public synthetic figure and
 tables used by the article; `render_regulation_figure.py` regenerates that
 figure from the recorded regulation summary.
+
+The v0.5.1 additions are `equilibrium_robustness.py`, which uses
+pseudo-arclength continuation for six separately varied synthetic coefficients,
+and `regulation_robustness.py`, which maps eight specified programs across nine
+input costs and 101 post-pulse observation times.  They preserve all accepted,
+rejected, and unresolved numerical records. `render_robustness_figures.py`
+rebuilds the stationary-branch and cost--time figures from those saved records.
+The new analyses are local, one-parameter or finite-grid synthetic mechanism
+studies; they do not estimate human thresholds, establish an optimal program,
+or validate the psychological constructs.
 
 To regenerate only presentation assets from an already verified result set:
 
@@ -95,25 +124,30 @@ simulation/
   referee_experiments.py         # complete v0.4.1 runner and figures
   recovery_research.py           # exposure-matched history and scalar-lag controls
   regulation_research.py         # 2^3 regulatory-input and boundary/support comparisons
+  equilibrium_robustness.py      # local stationary-branch continuation study
+  regulation_robustness.py       # cost--time programme-ranking robustness study
   render_regulation_figure.py    # article Figure 5 renderer from saved synthetic outputs
+  render_robustness_figures.py   # article Figures 6--7 renderer from saved records
   configs/referee_protocol.json  # declared current protocol
   configs/recovery_research_protocol.json
   configs/regulation_research_protocol.json
-  tests/                         # 83 regression and mathematical checks
+  configs/equilibrium_robustness_protocol.json
+  configs/regulation_robustness_protocol.json
+  tests/                         # 92 regression and mathematical checks
   referee-results/               # preserved v0.4.0 numerical snapshot
   presentation-results/          # v0.4.1 presentation record and assets
-  recovery-research-results/     # v0.5.0 exposure-matched record
-  regulation-research-results/   # v0.5.0 input-factorial and boundary/support record
+  recovery-research-results/     # v0.5.0 exposure-matched plus v0.5.1 branch records
+  regulation-research-results/   # v0.5.0 factorial plus v0.5.1 cost--time records
   recovery-presentation-assets/  # exact public synthetic assets used in the article
 ```
 
-The protocol keeps the historical source files required by the test suite, but
-the current executable entry point, configuration, and results are the
-`referee_*` files above.
+The `referee_*` files preserve the historical v0.4.1 record required by the
+test suite. The declared v0.5.1 entry points and configuration files are the
+four research and robustness runners listed above.
 
 ## Licence and citation
 
 All code, configurations, tests, and committed synthetic outputs in this
 repository are released under the [MIT License](LICENSE). Please cite release
-v0.5.0 and the accompanying article; machine-readable metadata are in
+v0.5.1 and the accompanying article; machine-readable metadata are in
 [`CITATION.cff`](CITATION.cff).

@@ -1,0 +1,4 @@
+# Tested dependencies for the v0.5.1 continuation, integration, and rendering workflows.
+numpy==1.26.4
+scipy==1.13.1
+matplotlib==3.9.4
