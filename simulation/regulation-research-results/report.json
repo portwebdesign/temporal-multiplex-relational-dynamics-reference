@@ -1,0 +1,27 @@
+{
+  "version": "recovery-research-1",
+  "condition_pairs": 25,
+  "recorded_arms": 50,
+  "unique_numerical_arms": 50,
+  "protocol_sha256": "ed016742bb29cbdd21a26c29f2bed843bbed5e4e8ada42fd0353995ea1ec9cd0",
+  "sources": {
+    "configs/regulation_research_protocol.json": "ed016742bb29cbdd21a26c29f2bed843bbed5e4e8ada42fd0353995ea1ec9cd0",
+    "regulation_research.py": "2d761e1da0794acf955bc8832ea26d9eb9d6a52202f07fa4d182b1ac65ebef0e",
+    "configs/referee_protocol.json": "c1b9a5cc0012134175b1f70b90bddadf0d07dd363bef85ef25bfa9d245503953",
+    "model.py": "611fed91f770b5e92871d7d9242a0438f0bacd907456b55271ce4c89797fca4f",
+    "network.py": "6768a67a5a15594b1b24b9959509855a85f3b133a5299c17c5065aba4e5be98b",
+    "regimes.py": "59c6ca0f8a6ed656c3450da5e7de3d25d93c7421e2b8d4802fee4edc4b91c532",
+    "analysis.py": "6917aa7d8b473ffbe3087cd4630fd862a8d5e4b3534cbd282d6c462891c063b5",
+    "referee_experiments.py": "ae7503d2da05dfb884c31e5de76b45e51fe7723f845c7b6dc25cbb4aaafd2e39"
+  },
+  "steps": [
+    0.02,
+    0.01,
+    0.005
+  ],
+  "maximum_medium_fine_state_difference": 6.831045729072116e-10,
+  "numerical_tolerance": 1e-07,
+  "refinement_pass": true,
+  "stationary_maximum_residual": 9.979048837260862e-12,
+  "meaning": "Synthetic intervention comparisons under the unchanged ODE; not a human efficacy test. All outcomes, including opposite effects, are retained."
+}

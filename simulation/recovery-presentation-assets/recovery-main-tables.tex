@@ -1,0 +1,13 @@
+\begin{table}[htbp]\centering\footnotesize
+\begin{tabular}{@{}lrrrrr@{}}\toprule
+Program & $w_2(10)$ & $r(10)$ & $r(20)$ & $\Delta r(10)$ & $\Delta r(20)$ \\\midrule
+Baseline & 0.485742 & 0.395841 & 0.467363 & 0.000000 & 0.000000 \\
+R & 0.478035 & 0.363991 & 0.485398 & -0.031850 & 0.018035 \\
+B & 0.475657 & 0.349010 & 0.466554 & -0.046831 & -0.000809 \\
+B+R & 0.467182 & 0.322799 & 0.484345 & -0.073042 & 0.016983 \\
+D & 0.247631 & 0.379156 & 0.493094 & -0.016685 & 0.025731 \\
+D+R & 0.241144 & 0.349272 & 0.514972 & -0.046569 & 0.047609 \\
+D+B & 0.242189 & 0.334634 & 0.491798 & -0.061208 & 0.024435 \\
+D+B+R & 0.235446 & 0.310025 & 0.513342 & -0.085817 & 0.045980 \\
+\bottomrule\end{tabular}
+\caption{All eight programs in the costly regime, sharing the same initial state and high-demand pulse. $\Delta r$ subtracts the baseline-input program under that same pulse; it is not pulse minus context. D: delay, B: boundary coordination, R: review. Time and coordinates are synthetic.}\label{tab:input-factorial}\end{table}

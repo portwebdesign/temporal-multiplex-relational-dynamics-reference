@@ -1,0 +1,27 @@
+{
+  "version": "recovery-research-1",
+  "status": "Secondary synthetic experiment; this protocol is recorded before running the new factorial and boundary-support outcomes. It is not an external preregistration.",
+  "question": "When do regulation inputs reduce load yet consume resources, and how do boundary-target and support interventions interact?",
+  "source_protocol": "configs/referee_protocol.json",
+  "equations": "Unchanged model.py; constructed coefficients and existing counter-pathways.",
+  "counter_parameters": {"k_visibility": 0.1, "k_access": 0.08, "k_isolation": 0.2},
+  "input_costs": [0.0, 0.2],
+  "input_order": ["delay", "boundary", "review"],
+  "strong_inputs": {"delay": 0.6, "boundary": 0.7, "review": 0.6},
+  "input_subsets": "All eight subsets, including the empty and all-input subsets; changes act only during the pulse interval.",
+  "interval": [5.0, 10.0],
+  "horizon": 20.0,
+  "steps": [0.02, 0.01, 0.005],
+  "numerical_tolerance": 0.0000001,
+  "boundary_support": {
+    "input_cost": 0.2,
+    "targets": [0.35, 0.45, 0.55],
+    "support_marks": [0.5, 1.0, 2.0],
+    "baseline_support_mark": 1.0,
+    "meaning": "Support marks are raw H before H/(1+H); interventions change only the 5-to-10 network segment. The target changes only during that same segment. All nine conditions share the same preintervention state, coefficients, baseline support, and basal demands."
+  },
+  "initialization": "Each input-cost coefficient regime has its own stationary state from the same existing upper seed. Within each coefficient regime, every input subset shares that reference. All boundary-support programs share the cost-0.2 stationary state. No coefficients are rebalanced.",
+  "context_control": "Keep the exact input, target and support intervention program; remove only the elevated opposed demand and retain the aligned basal demand edges.",
+  "outcomes": ["r(10)", "r(20)", "w1(10)", "w1(20)", "w2(10)", "w2(20)", "demand-minus-context differences at 10 and 20", "same-cost raw input effects relative to empty subset", "same-support target effects relative to 0.45", "same-target support effects relative to raw support 1"],
+  "interpretation": "Model coordinates and times are synthetic; these tests do not establish human efficacy or a calibrated recovery time. Raw program outcomes and the response to an additional demand are distinct estimands. Direct demand and direct support pathways remain active at every boundary target."
+}

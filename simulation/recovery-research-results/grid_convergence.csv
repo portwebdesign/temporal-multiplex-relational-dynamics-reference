@@ -1,0 +1,7 @@
+scenario,coarse_medium_max_state_error,medium_fine_max_state_error,passes_fixed_tolerance
+aligned_one_block,3.103628465339625e-12,1.9290125052862095e-13,True
+aligned_two_blocks,3.103350909583469e-12,1.9317880628477724e-13,True
+aligned_four_blocks,3.103350909583469e-12,1.9317880628477724e-13,True
+opposed_one_block,2.9644064980516305e-12,1.8390844402915718e-13,True
+opposed_two_blocks,2.964128942295474e-12,1.8424151093654473e-13,True
+opposed_four_blocks,2.964128942295474e-12,1.8424151093654473e-13,True

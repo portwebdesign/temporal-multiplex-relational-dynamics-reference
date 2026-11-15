@@ -1,0 +1,158 @@
+{
+  "version": "recovery-history-1.0",
+  "date": "2026-11-14",
+  "status": "Analysis design fixed before computing these new history contrasts; not an external preregistration.",
+  "question": "Do equal-duration, equal-peak, equal-dose demand programs leave different finite-window or terminal states under unchanged model coefficients?",
+  "existing_protocol": "configs/referee_protocol.json",
+  "coefficient_rule": "Reuse the existing six-equation nominal stationary construction without coefficient changes or outcome-based searches.",
+  "directions": [
+    "aligned",
+    "opposed"
+  ],
+  "baseline_mark": 0.15,
+  "peak_mark": 1.0,
+  "histories": {
+    "one_block": [
+      [
+        25,
+        45
+      ]
+    ],
+    "two_blocks": [
+      [
+        5,
+        15
+      ],
+      [
+        35,
+        45
+      ]
+    ],
+    "four_blocks": [
+      [
+        5,
+        10
+      ],
+      [
+        16.666666666666668,
+        21.666666666666668
+      ],
+      [
+        28.333333333333332,
+        33.333333333333336
+      ],
+      [
+        40,
+        45
+      ]
+    ]
+  },
+  "solver": {
+    "method": "classical_runge_kutta_4",
+    "steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "time_horizon": 50.0,
+    "trace_output_step": 0.1,
+    "state_convergence_tolerance": 1e-06
+  },
+  "outcome_times": [
+    45,
+    50
+  ],
+  "reference_preparation": {
+    "seed_names": [
+      "interior_upper",
+      "interior_lower"
+    ],
+    "dt": 1.0,
+    "tolerance": 1e-11,
+    "max_time": 60000,
+    "check_interval": 1
+  },
+  "post_history_relaxation": {
+    "start": 50,
+    "steps": [
+      1.0,
+      0.5
+    ],
+    "tolerance": 1e-11,
+    "max_time": 60000,
+    "check_interval": 1,
+    "branch_distance_tolerance": 1e-06,
+    "rule": "Continue all seven coordinates from the finest-grid endpoint under unchanged basal forcing; classify against stationary references from the same direction and coefficient set. Retain unresolved runs."
+  },
+  "feedback_subsets": {
+    "optional_active": [
+      "s",
+      "e",
+      "p",
+      "w1"
+    ],
+    "always_active": [
+      "r",
+      "w2"
+    ],
+    "frozen_rule": "For each direction every inactive coordinate is frozen at the same full-system starting reference. All sixteen subsets and all three histories are retained. Each subset defines a different vector field; terminal states are compared only within that subset.",
+    "step": 0.02,
+    "relaxation_step": 1.0,
+    "interpretation": "Finite-history dependence and within-subset distinct stationary outcomes; not proof that seven coordinates are mathematically necessary."
+  },
+  "interpretation": {
+    "synthetic_time": true,
+    "human_threshold_or_irreversibility_claim": false,
+    "hysteresis_claim": "Equal-dose history effects alone do not establish rate-independent hysteresis. Distinct recorded terminal states require small active-field residuals and a distance exceeding the fixed classification tolerance within one unchanged vector field.",
+    "design_scope": "Programs share peak, total high duration, total observation time and final high-demand end. Their earlier timing and maximum uninterrupted duration differ jointly; a difference is a schedule effect, not an isolated universal effect of number of interruptions."
+  },
+  "scalar_comparator": {
+    "model": "dz/dt=(d_ext-z)/tau",
+    "time_constants": [
+      1,
+      5,
+      20
+    ],
+    "initial_state": "direction-specific basal external_demand",
+    "solver": "exact piecewise-constant gain-loss solution",
+    "amendment": "Added before comparator effects were computed, following the primary-source review: a stable scalar lag can produce finite-window schedule differences without multiple equilibria. All fixed time constants retained without fitting.",
+    "terminal_equilibrium": "basal external_demand, identical for all histories"
+  },
+  "exploratory_duration_extension": {
+    "status": "EXPLORATORY amendment after reading the initial 20-high-unit primary result; not prespecified confirmatory evidence.",
+    "reason": "All three initial aligned histories returned to the upper reference. Check whether that null terminal contrast depends on the chosen duration, without changing amplitude, coefficients or selecting a successful condition.",
+    "schedule_scaling_origin": 5,
+    "scale_factors": [
+      0.5,
+      2.0
+    ],
+    "initial_primary_scale": 1.0,
+    "high_duration_by_scale": {
+      "0.5": 10,
+      "1.0": 20,
+      "2.0": 40
+    },
+    "final_high_end_by_scale": {
+      "0.5": 25,
+      "1.0": 45,
+      "2.0": 85
+    },
+    "recovery_window_after_last_high": 5,
+    "full_directions": [
+      "aligned",
+      "opposed"
+    ],
+    "histories": "all three histories at every scale",
+    "solver_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "terminal_relaxation_steps": [
+      1.0,
+      0.5
+    ],
+    "feedback_subset_extension": false,
+    "inference": "Compare schedules only within each fixed duration/dose level; differences across duration levels also change total exposure. Retain every result including nulls."
+  }
+}

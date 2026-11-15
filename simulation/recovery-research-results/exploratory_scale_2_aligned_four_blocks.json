@@ -1,0 +1,489 @@
+{
+  "configuration": {
+    "metadata": {
+      "version": "recovery-history-1.0",
+      "direction": "aligned",
+      "coefficient_source": "unchanged existing nominal stationary construction",
+      "history": "four_blocks"
+    },
+    "solver": {
+      "method": "classical_runge_kutta_4",
+      "dt": 0.005,
+      "time_horizon": 90.0
+    },
+    "initial_state": [
+      0.6,
+      0.35,
+      0.6,
+      0.45,
+      0.6,
+      0.6,
+      0.35
+    ],
+    "inputs": {
+      "baseline": {
+        "delay": 0.2,
+        "boundary": 0.35,
+        "review": 0.3
+      },
+      "schedule": []
+    },
+    "parameters": {
+      "b2": 0.25,
+      "b3": 0.25,
+      "q1": 0.3,
+      "q_s": 0.25,
+      "q_e": 0.25,
+      "q_g": 0.25,
+      "q_h": 0.25,
+      "c_target": 0.45,
+      "c_star": 0.5,
+      "psi_max": 1.0,
+      "a1": 0.28,
+      "a2": 0.2,
+      "a3": 0.16,
+      "b1": 0.3,
+      "rho_s": 0.18,
+      "a_s": 0.13911858499999996,
+      "nu_s": 0.16,
+      "xi_s": 0.18,
+      "mu_e": 0.16,
+      "omega_e": 0.14,
+      "kappa_e": 0.12,
+      "a_e": 0.18792511238095244,
+      "P0": 0.08,
+      "alpha_r": 0.12,
+      "a_r": 0.1,
+      "gamma_r": 0.1,
+      "theta_r": 0.16,
+      "eta_r": 0.3221710971075378,
+      "tau_c": 0.2,
+      "rho_p": 0.5909420289855072,
+      "a_p": 0.12,
+      "b_p": 0.1,
+      "delta_p": 0.12,
+      "zeta_p": 0.16,
+      "a_w1": 0.12,
+      "b_w1": 0.1,
+      "gamma_12": 0.14,
+      "d_w1": 0.6603856035714287,
+      "a_w2": 0.12,
+      "b_w2": 0.1,
+      "d_w2": 0.12,
+      "h_w2": 1.1985502100840337,
+      "a_conflict": 0.3,
+      "lambda_d": 0.2,
+      "lambda_h": 0.15,
+      "k_visibility": 0.0,
+      "k_access": 0.0,
+      "k_input": 0.0,
+      "k_isolation": 0.0
+    },
+    "network": {
+      "baseline": {
+        "dimension": 1,
+        "layer_scales": [
+          1,
+          1,
+          1
+        ],
+        "support_scale": 1,
+        "psi_scale": 1,
+        "coupling": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0.2
+          ],
+          [
+            0,
+            0.2,
+            0
+          ]
+        ],
+        "demand_edges": [
+          {
+            "layer": 1,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1
+            ]
+          },
+          {
+            "layer": 2,
+            "weight": 1,
+            "magnitude": 0.15,
+            "direction": [
+              1.0
+            ]
+          }
+        ],
+        "support_edges": [
+          {
+            "weight": 1,
+            "support": 1
+          }
+        ]
+      },
+      "schedule": [
+        {
+          "start": 5.0,
+          "end": 15.0,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1.0,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1.0,
+                "direction": [
+                  1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        },
+        {
+          "start": 28.333333333333336,
+          "end": 38.333333333333336,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1.0,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1.0,
+                "direction": [
+                  1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        },
+        {
+          "start": 51.666666666666664,
+          "end": 61.66666666666667,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1.0,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1.0,
+                "direction": [
+                  1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        },
+        {
+          "start": 75.0,
+          "end": 85.0,
+          "network": {
+            "dimension": 1,
+            "layer_scales": [
+              1,
+              1,
+              1
+            ],
+            "support_scale": 1,
+            "psi_scale": 1,
+            "coupling": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0.2
+              ],
+              [
+                0,
+                0.2,
+                0
+              ]
+            ],
+            "demand_edges": [
+              {
+                "layer": 1,
+                "weight": 1,
+                "magnitude": 1.0,
+                "direction": [
+                  1
+                ]
+              },
+              {
+                "layer": 2,
+                "weight": 1,
+                "magnitude": 1.0,
+                "direction": [
+                  1.0
+                ]
+              }
+            ],
+            "support_edges": [
+              {
+                "weight": 1,
+                "support": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "permeability_target": {
+      "baseline": 0.45,
+      "schedule": []
+    }
+  },
+  "exposure": {
+    "high_duration": 40.00000000000001,
+    "observation_duration": 90.0,
+    "last_high_end": 85.0,
+    "integral_total_demand": 114.00000000000001,
+    "peak_total_demand": 2.4,
+    "integral_external_demand": 41.47058823529412,
+    "peak_external_demand": 0.7058823529411765,
+    "integral_raw_conflict": 0.0,
+    "peak_raw_conflict": 0.0,
+    "integral_conflict": 0.0,
+    "peak_conflict": 0.0
+  },
+  "metrics": {
+    "s_t85": 0.4242122682191363,
+    "e_t85": 0.51257718827394,
+    "r_t85": 0.43938242878241496,
+    "c_t85": 0.45,
+    "p_t85": 0.3704898620736975,
+    "w1_t85": 0.3593561245617752,
+    "w2_t85": 0.49317878923758157,
+    "s_t90": 0.41027060435592694,
+    "e_t90": 0.5128665313414869,
+    "r_t90": 0.43874228187259284,
+    "c_t90": 0.45,
+    "p_t90": 0.3567592257155293,
+    "w1_t90": 0.3460909568093072,
+    "w2_t90": 0.3992376242362348,
+    "minimum_r": 0.43662860511617435,
+    "maximum_w2": 0.49317878923758157
+  },
+  "grid_convergence": {
+    "coarse_medium_max_state_error": 3.103350909583469e-12,
+    "medium_fine_max_state_error": 1.9317880628477724e-13,
+    "passes_fixed_tolerance": true
+  },
+  "continuations": {
+    "1.0": {
+      "status": "converged",
+      "state": [
+        0.3661266400793842,
+        0.5263087123451489,
+        0.422774613623211,
+        0.45,
+        0.3018792960064014,
+        0.31113426510911874,
+        0.38789419903866906
+      ],
+      "residual": 9.988135318828029e-12,
+      "full_residual": 9.988135318828029e-12,
+      "time": 5611.0,
+      "steps": 5611,
+      "initial_state": [
+        0.41027060435592694,
+        0.5128665313414869,
+        0.43874228187259284,
+        0.45,
+        0.3567592257155293,
+        0.3460909568093072,
+        0.3992376242362348
+      ],
+      "dt": 1.0,
+      "step_reductions": 0,
+      "active_coordinates": [
+        "s",
+        "e",
+        "r",
+        "c",
+        "p",
+        "w1",
+        "w2"
+      ],
+      "distances_to_same_field_references": {
+        "aligned_upper_reference": 0.2981207039935986,
+        "aligned_lower_reference": 1.7477130853649214e-12
+      },
+      "branch": "aligned_lower_reference"
+    },
+    "0.5": {
+      "status": "converged",
+      "state": [
+        0.36612664007938417,
+        0.526308712345149,
+        0.422774613623211,
+        0.45,
+        0.3018792960064013,
+        0.3111342651091188,
+        0.3878941990386691
+      ],
+      "residual": 9.988135318828029e-12,
+      "full_residual": 9.988135318828029e-12,
+      "time": 5611.0,
+      "steps": 11222,
+      "initial_state": [
+        0.41027060435592694,
+        0.5128665313414869,
+        0.43874228187259284,
+        0.45,
+        0.3567592257155293,
+        0.3460909568093072,
+        0.3992376242362348
+      ],
+      "dt": 0.5,
+      "step_reductions": 0,
+      "active_coordinates": [
+        "s",
+        "e",
+        "r",
+        "c",
+        "p",
+        "w1",
+        "w2"
+      ],
+      "distances_to_same_field_references": {
+        "aligned_upper_reference": 0.2981207039935987,
+        "aligned_lower_reference": 1.747602063062459e-12
+      },
+      "branch": "aligned_lower_reference"
+    }
+  },
+  "terminal_step_distance": 1.1102230246251565e-16,
+  "design_status": "EXPLORATORY amendment after reading the initial 20-high-unit primary result; not prespecified confirmatory evidence.",
+  "scale_factor": 2.0,
+  "outcome_times": [
+    85.0,
+    90.0
+  ]
+}

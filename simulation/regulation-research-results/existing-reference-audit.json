@@ -1,0 +1,131 @@
+{
+  "checks": [
+    {
+      "condition": "input_cost_0.2_none",
+      "reference": "opposed_tradeoffs",
+      "time": 10,
+      "coordinate": "r",
+      "original": 0.39584127994028623,
+      "new": 0.39584127993920265,
+      "absolute_difference": 1.0835776720341528e-12,
+      "pass": true
+    },
+    {
+      "condition": "input_cost_0.2_none",
+      "reference": "opposed_tradeoffs",
+      "time": 10,
+      "coordinate": "w1",
+      "original": 0.2823847960760648,
+      "new": 0.2823847960763615,
+      "absolute_difference": 2.967071033310731e-13,
+      "pass": true
+    },
+    {
+      "condition": "input_cost_0.2_none",
+      "reference": "opposed_tradeoffs",
+      "time": 10,
+      "coordinate": "w2",
+      "original": 0.485742146505377,
+      "new": 0.48574214650716613,
+      "absolute_difference": 1.7891244041834398e-12,
+      "pass": true
+    },
+    {
+      "condition": "input_cost_0.2_none",
+      "reference": "opposed_tradeoffs",
+      "time": 20,
+      "coordinate": "r",
+      "original": 0.4673626918254486,
+      "new": 0.4673626918255709,
+      "absolute_difference": 1.22291066162461e-13,
+      "pass": true
+    },
+    {
+      "condition": "input_cost_0.2_none",
+      "reference": "opposed_tradeoffs",
+      "time": 20,
+      "coordinate": "w1",
+      "original": 0.28092247366291445,
+      "new": 0.2809224736628634,
+      "absolute_difference": 5.10702591327572e-14,
+      "pass": true
+    },
+    {
+      "condition": "input_cost_0.2_none",
+      "reference": "opposed_tradeoffs",
+      "time": 20,
+      "coordinate": "w2",
+      "original": 0.38880588418052064,
+      "new": 0.38880588418031437,
+      "absolute_difference": 2.0627943797535409e-13,
+      "pass": true
+    },
+    {
+      "condition": "input_cost_0.2_delay_boundary_review",
+      "reference": "opposed_tradeoffs_inputs",
+      "time": 10,
+      "coordinate": "r",
+      "original": 0.31002461573650764,
+      "new": 0.31002461573084095,
+      "absolute_difference": 5.6666893399892615e-12,
+      "pass": true
+    },
+    {
+      "condition": "input_cost_0.2_delay_boundary_review",
+      "reference": "opposed_tradeoffs_inputs",
+      "time": 10,
+      "coordinate": "w1",
+      "original": 0.3442093364638284,
+      "new": 0.3442093364637461,
+      "absolute_difference": 8.232303727595536e-14,
+      "pass": true
+    },
+    {
+      "condition": "input_cost_0.2_delay_boundary_review",
+      "reference": "opposed_tradeoffs_inputs",
+      "time": 10,
+      "coordinate": "w2",
+      "original": 0.23544608184270313,
+      "new": 0.2354460818366915,
+      "absolute_difference": 6.011635633740298e-12,
+      "pass": true
+    },
+    {
+      "condition": "input_cost_0.2_delay_boundary_review",
+      "reference": "opposed_tradeoffs_inputs",
+      "time": 20,
+      "coordinate": "r",
+      "original": 0.5133422668453929,
+      "new": 0.5133422668460902,
+      "absolute_difference": 6.973310817670608e-13,
+      "pass": true
+    },
+    {
+      "condition": "input_cost_0.2_delay_boundary_review",
+      "reference": "opposed_tradeoffs_inputs",
+      "time": 20,
+      "coordinate": "w1",
+      "original": 0.3902384060351519,
+      "new": 0.39023840603578314,
+      "absolute_difference": 6.312173006506328e-13,
+      "pass": true
+    },
+    {
+      "condition": "input_cost_0.2_delay_boundary_review",
+      "reference": "opposed_tradeoffs_inputs",
+      "time": 20,
+      "coordinate": "w2",
+      "original": 0.36092918980885047,
+      "new": 0.36092918980888866,
+      "absolute_difference": 3.8191672047105385e-14,
+      "pass": true
+    }
+  ],
+  "all_pass": true,
+  "maximum_difference": 6.011635633740298e-12,
+  "sources": {
+    "simulation/presentation-results/opposed_tradeoffs.csv": "8fdefcf82cb8de33d783069a934fd2460fbd052938350e34998eab5e58521f3d",
+    "simulation/presentation-results/opposed_tradeoffs_inputs.csv": "250ecd0df9fb0fa33d1d6e1c8688f9c61306da603307d8efb71d572c9f9eca23",
+    "simulation/regulation-research-results/summary.csv": "bcec2678f7293b34e54a3627c94eff2a880ce3a6ae6bd0491bd50dcf3fe8a878"
+  }
+}
